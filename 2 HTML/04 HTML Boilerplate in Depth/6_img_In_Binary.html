@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Images are Stored in Binary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #4f4fc1;
+        }
+        .highlight {
+            color: #d54f3d;
+            font-weight: bold;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .code-block {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre;
+        }
+        .example {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 5px solid #4f4fc1;
+            margin: 10px 0;
+        }
+        .pixel-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 50px);
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .pixel {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ddd;
+        }
+        .pixel.red { background-color: red; }
+        .pixel.green { background-color: green; }
+        .pixel.blue { background-color: blue; }
+        .pixel.white { background-color: white; }
+        .pixel-label {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>How Images are Stored in Binary</h1>
+    <p>In digital storage, images are represented by a collection of pixels, each storing color information as binary data. Here’s a simple breakdown of how this works and why it matters.</p>
+
+    <h2>1. Pixels: The Basic Unit of Images</h2>
+    <p>An image is made up of small dots called <span class="highlight">pixels</span>. Each pixel holds color information in the form of binary numbers.</p>
+
+    <div class="example">
+        <h3>Example:</h3>
+        <p>Imagine a 2x2 pixel image:</p>
+
+        <div class="pixel-grid">
+            <div class="pixel red"></div>
+            <div class="pixel green"></div>
+            <div class="pixel blue"></div>
+            <div class="pixel white"></div>
+        </div>
+
+        <div class="pixel-label">
+            <p>Pixel (1,1): <span class="highlight">11111111 00000000 00000000</span> (Red)</p>
+        </div>
+        <div class="pixel-label">
+            <p>Pixel (1,2): <span class="highlight">00000000 11111111 00000000</span> (Green)</p>
+        </div>
+        <div class="pixel-label">
+            <p>Pixel (2,1): <span class="highlight">00000000 00000000 11111111</span> (Blue)</p>
+        </div>
+        <div class="pixel-label">
+            <p>Pixel (2,2): <span class="highlight">11111111 11111111 11111111</span> (White)</p>
+        </div>
+    </div>
+
+    <h2>2. Color Depth: Defining Color Detail</h2>
+    <p><span class="highlight">Color depth</span> is the number of bits used to store color for each pixel. Common depths include:</p>
+    <ul>
+        <li><span class="highlight">8-bit (Grayscale):</span> Uses 1 byte per pixel, with 256 possible shades.</li>
+        <li><span class="highlight">24-bit (True Color):</span> Uses 3 bytes (1 for Red, 1 for Green, 1 for Blue), allowing 16.7 million colors.</li>
+        <li><span class="highlight">32-bit (RGBA):</span> Adds an extra 8 bits for transparency, storing data in 4 bytes per pixel.</li>
+    </ul>
+
+    <div class="example">
+        <h3>Example:</h3>
+        <p>A pixel in 24-bit color depth for red would be:</p>
+        <pre class="code-block">11111111 00000000 00000000 (Red in RGB)</pre>
+    </div>
+
+    <h2>3. Resolution and File Size</h2>
+    <p><span class="highlight">Resolution</span> is the number of pixels in an image, described by <em>width x height</em> (e.g., 1920x1080). Resolution and color depth determine the file size:</p>
+    <ul>
+        <li>A higher resolution (more pixels) increases file size.</li>
+        <li>A higher color depth (more bits per pixel) also increases file size.</li>
+    </ul>
+
+    <div class="example">
+        <h3>Example:</h3>
+        <p>A 100x100 image with 24-bit color depth would require:</p>
+        <pre class="code-block">100 x 100 x 3 bytes = 30,000 bytes (30 KB)</pre>
+    </div>
+
+    <h2>4. Image Compression Formats</h2>
+    <p>Different formats use different ways of compressing image data:</p>
+    <ul>
+        <li><span class="highlight">JPEG:</span> Uses lossy compression, reducing file size by discarding some detail.</li>
+        <li><span class="highlight">PNG:</span> Uses lossless compression, preserving all pixel data.</li>
+        <li><span class="highlight">BMP:</span> Stores pixel data directly without compression, leading to larger file sizes.</li>
+    </ul>
+
+    <h2>5. Putting It All Together</h2>
+    <p>Here’s an example of how a small image might look in binary:</p>
+
+    <div class="example">
+        <h3>Example:</h3>
+        <p>In a 2x2 RGB image, each pixel uses 3 bytes (24 bits) of binary data:</p>
+        <pre class="code-block">
+Pixel (1,1): 11111111 00000000 00000000 (Red)
+Pixel (1,2): 00000000 11111111 00000000 (Green)
+Pixel (2,1): 00000000 00000000 11111111 (Blue)
+Pixel (2,2): 11111111 11111111 11111111 (White)
+        </pre>
+    </div>
+
+    <h2>Summary</h2>
+    <ul>
+        <li>Images are stored in binary, with each pixel’s color represented by binary values.</li>
+        <li>Color depth affects both color detail and file size.</li>
+        <li>Resolution and color depth together determine file size.</li>
+        <li>Formats like JPEG, PNG, and BMP balance quality and file size differently.</li>
+    </ul>
+
+</body>
+</html>

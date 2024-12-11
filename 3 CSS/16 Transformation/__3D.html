@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Transformations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: flex-start; /* Change from center to top */
+            align-items: flex-start;
+            min-height: 100vh; /* Ensure content fits within viewport */
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px; /* Add padding to prevent content from touching edges */
+        }
+
+        h2, h3 {
+            color: #2c3e50;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            margin: 10px 0;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            transition: transform 0.5s ease, background-color 0.5s ease;
+            margin: 10px;
+        }
+
+        .box:hover {
+            background-color: #e74c3c;
+        }
+
+        .note {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #f39c12;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h2>3D Transformations</h2>
+        <p><strong>Description:</strong> 3D transformations in CSS allow elements to be moved, rotated, and scaled along three axes, creating a three-dimensional effect. These transformations enable the creation of interactive and visually engaging elements that appear to exist in a 3D space. The key property required for 3D transformations to work is the <code>perspective</code> property, which gives depth to the 3D objects.</p>
+
+        <h3>Key 3D Transformation Functions:</h3>
+        <ul>
+            <li><strong>perspective:</strong> Defines the depth and viewing angle of the 3D space. It must be applied to the container element.</li>
+            <li><strong>rotateX:</strong> Rotates the element around the X-axis (horizontal axis), tilting the element up or down.</li>
+            <li><strong>rotateY:</strong> Rotates the element around the Y-axis (vertical axis), tilting the element side to side.</li>
+            <li><strong>rotateZ:</strong> Rotates the element around the Z-axis (perpendicular to the screen), like turning a page.</li>
+            <li><strong>translateZ:</strong> Moves the element along the Z-axis, either toward or away from the viewer, adding a 3D depth effect.</li>
+            <li><strong>scaleZ:</strong> Scales the element along the Z-axis, changing its perceived depth.</li>
+        </ul>
+
+        <h3>Example 1: Basic Rotation on X, Y, and Z Axes</h3>
+        <p>Here we demonstrate basic rotations along the X, Y, and Z axes. Hovering over the boxes will rotate them on respective axes.</p>
+
+        <div class="container">
+            <div class="box" onmouseover="this.style.transform='rotateX(45deg)';" onmouseout="this.style.transform='rotateX(0deg)';">
+                RotateX
+            </div>
+            <div class="box" onmouseover="this.style.transform='rotateY(45deg)';" onmouseout="this.style.transform='rotateY(0deg)';">
+                RotateY
+            </div>
+            <div class="box" onmouseover="this.style.transform='rotateZ(45deg)';" onmouseout="this.style.transform='rotateZ(0deg)';">
+                RotateZ
+            </div>
+        </div>
+
+        <pre><code>/* Rotate element on each axis */
+.box:hover {
+    transform: rotateX(45deg);
+}
+.box:hover {
+    transform: rotateY(45deg);
+}
+.box:hover {
+    transform: rotateZ(45deg);
+}</code></pre>
+
+        <h3>Example 2: Moving Elements in 3D Space (translateZ)</h3>
+        <p>In this example, we move the element towards or away from the viewer using the <code>translateZ()</code> function.</p>
+
+        <div class="container">
+            <div class="box" onmouseover="this.style.transform='translateZ(100px)';" onmouseout="this.style.transform='translateZ(0px)';">
+                translateZ
+            </div>
+        </div>
+
+        <pre><code>/* Translate element along the Z-axis */
+.box:hover {
+    transform: translateZ(100px);
+}</code></pre>
+
+        <h3>Example 3: Combining Transformations for 3D Effect</h3>
+        <p>This example combines both rotation and translation, so the element rotates and moves closer to the viewer simultaneously.</p>
+
+        <div class="container">
+            <div class="box" style="perspective: 1000px;" onmouseover="this.style.transform='rotateY(45deg) translateZ(150px)';" onmouseout="this.style.transform='rotateY(0deg) translateZ(0px)';">
+                3D Move
+            </div>
+        </div>
+
+        <pre><code>/* Combine rotation and translation for a 3D effect */
+.box:hover {
+    transform: rotateY(45deg) translateZ(150px);
+}</code></pre>
+
+        <h3>Example 4: Creating a 3D Cube with Multiple Faces</h3>
+        <p>Let's now create a simple 3D cube by rotating its faces along different axes. This gives the illusion of a spinning cube in 3D space.</p>
+
+        <div class="container" style="perspective: 800px;">
+            <div class="box" onmouseover="this.style.transform='rotateX(45deg) rotateY(45deg)';" onmouseout="this.style.transform='rotateX(0deg) rotateY(0deg)';">
+                3D Cube
+            </div>
+        </div>
+
+        <pre><code>/* Rotate 3D cube along both X and Y axes */
+.box:hover {
+    transform: rotateX(45deg) rotateY(45deg);
+}</code></pre>
+
+        <h3>Advanced Techniques</h3>
+        <ul>
+            <li><strong>Multiple Transforms:</strong> You can apply multiple transformations (rotation, translation, scaling) to create more complex animations and effects.</li>
+            <li><strong>Transform Origin:</strong> The <code>transform-origin</code> property defines the point of origin for transformations, such as the point around which an element will rotate. Default is the center of the element, but it can be adjusted to corners or edges.</li>
+            <li><strong>Transforming Text and 3D Shadows:</strong> 3D transformations are also effective in animating text, giving it depth. <code>box-shadow</code> and <code>text-shadow</code> can be combined with 3D transformations for more impressive visual effects.</li>
+        </ul>
+
+        <div class="note">
+            <strong>Important Notes:</strong>
+            <ul>
+                <li>The <code>perspective</code> property must be applied to the parent container of the 3D object, not the object itself, to create realistic depth.</li>
+                <li>Ensure you define the perspective correctly. A value too small will exaggerate the depth, and a value too large will flatten the effect.</li>
+                <li>Chaining transformations (e.g., <code>rotateX</code> and <code>translateZ</code>) allows for highly complex 3D effects and animations.</li>
+                <li>Using <code>perspective-origin</code> helps to control where the 3D effect appears to originate from.</li>
+            </ul>
+        </div>
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Color Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #2d3748;
+            line-height: 1.8;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #3182ce;
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin: 18px 0;
+        }
+
+        ol {
+            margin-left: 20px;
+        }
+
+        code {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .example-box {
+            background-color: #edf2f7;
+            border-left: 4px solid #3182ce;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+
+        .example-title {
+            font-weight: bold;
+            color: #3182ce;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Color Guide</h1>
+
+    <ol>
+        <li><b>Named Colors</b>
+            <p>CSS allows you to use predefined color names like <code>red</code>, <code>blue</code>, <code>green</code>, etc., directly in your code. Named colors are easy to remember and great for basic styling.</p>
+            <div class="example-box">
+                <span class="example-title">Example:</span>
+                <code>color: red;</code> or <code>background-color: green;</code>
+                <p>This would apply red text color or green background color.</p>
+            </div>
+        </li>
+
+        <li><b>RGB Colors</b>
+            <p>RGB stands for Red, Green, and Blue. Each color value ranges from 0 to 255, allowing you to create millions of color combinations. Use this format when you want precise color control.</p>
+            <div class="example-box">
+                <span class="example-title">Example:</span>
+                <code>color: rgb(255, 0, 0);</code>
+                <p>This would produce a pure red color, with maximum red (255) and no green or blue.</p>
+            </div>
+        </li>
+
+        <li><b>Hexadecimal Colors</b>
+            <p>Hexadecimal colors start with a <code>#</code> followed by six characters. The characters represent red, green, and blue values in hexadecimal format (00-FF). This format is commonly used and supported widely in CSS.</p>
+            <div class="example-box">
+                <span class="example-title">Example:</span>
+                <code>color: #ff0000;</code>
+                <p>This hex code creates red, where <code>ff</code> is the maximum red value, and both green and blue are <code>00</code>.</p>
+            </div>
+        </li>
+
+        <li><b>Alpha Transparency</b>
+            <p>The <code>alpha</code> component adds transparency to colors in RGB and HSL formats, specified as <code>RGBA</code> or <code>HSLA</code>. Alpha ranges from 0 (completely transparent) to 1 (fully opaque).</p>
+            <div class="example-box">
+                <span class="example-title">Example:</span>
+                <code>background-color: rgba(255, 0, 0, 0.5);</code>
+                <p>This would create a semi-transparent red background color, allowing underlying elements to partially show through.</p>
+            </div>
+        </li>
+
+        <li><b>HSL Colors</b>
+            <p>HSL stands for Hue, Saturation, and Lightness. Hue specifies the color (0-360 degrees), saturation represents intensity (0-100%), and lightness adjusts brightness (0% for black, 100% for white).</p>
+            <ul>
+                <li><b>Hue</b>: The actual color type (e.g., red, green, blue), represented by degrees on the color wheel (0 for red, 120 for green, 240 for blue).</li>
+                <li><b>Saturation</b>: The color's intensity, from 0% (grayscale) to 100% (full color).</li>
+                <li><b>Lightness</b>: The brightness level of the color, where 0% is black and 100% is white.</li>
+            </ul>
+            <div class="example-box">
+                <span class="example-title">Example:</span>
+                <code>color: hsl(0, 100%, 50%);</code>
+                <p>This produces a bright red color, where hue is 0 (red), saturation is fully intense (100%), and lightness is balanced at 50%.</p>
+            </div>
+        </li>
+
+        <li><b>Background Color</b>
+            <p>The <code>background-color</code> property applies color to an element's background. Any color format (named, RGB, hex, HSL) can be used.</p>
+            <div class="example-box">
+                <span class="example-title">Example:</span>
+                <code>background-color: lightblue;</code>
+                <p>This would create a light blue background color.</p>
+            </div>
+        </li>
+
+        <li><b>Background Properties</b>
+            <p>These properties offer more control over background images:</p>
+            <ul>
+                <li><code>background-size: cover;</code>: Scales the background image to cover the entire element area.</li>
+                <li><code>background-repeat: no-repeat;</code>: Prevents the background image from repeating.</li>
+            </ul>
+            <div class="example-box">
+                <span class="example-title">Example:</span>
+                <code>background-size: cover;</code> and <code>background-repeat: no-repeat;</code>
+                <p>Using these properties ensures the background image covers the entire element without repeating.</p>
+            </div>
+        </li>
+    </ol>
+
+</body>
+</html>

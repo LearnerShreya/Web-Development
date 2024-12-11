@@ -1,0 +1,39 @@
+
+
+Here are some basic VS Code shortcuts for Windows:
+
+General
+Ctrl + Shift + P / F1: Open Command Palette
+Ctrl + P: Quick open file
+Ctrl + ,: Open settings
+Ctrl + B: Toggle sidebar
+Ctrl + `: Toggle terminal
+
+Editing
+Ctrl + X: Cut line
+Ctrl + C: Copy line
+Ctrl + V: Paste
+Ctrl + Shift + K: Delete line
+Ctrl + Enter: Insert line below
+Ctrl + Shift + Enter: Insert line above
+Alt + Up/Down Arrow: Move line up/down
+Shift + Alt + Up/Down Arrow: Copy line up/down
+Ctrl + D: Select word (multiple occurrences)
+Ctrl + /: Toggle comment
+
+Navigation
+Ctrl + Shift + O: Go to symbol in file
+Ctrl + T: Go to symbol in workspace
+Ctrl + G: Go to line
+Ctrl + Shift + Tab: Navigate open editors
+
+Multi-cursor
+Alt + Click: Insert additional cursor
+Ctrl + Alt + Down/Up Arrow: Insert cursor below/above
+Ctrl + Shift + L: Select all occurrences of current selection
+
+Formatting and Refactoring
+Alt + Shift + F: Format document
+Ctrl + Shift + M: Show problems (errors, warnings)
+F2: Rename symbol
+These shortcuts can help you quickly navigate, edit, and refactor your code in VS Code.

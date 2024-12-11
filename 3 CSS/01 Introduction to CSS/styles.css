@@ -1,0 +1,37 @@
+/* External CSS: styles.css */
+
+/* Element selector for <h1> */
+h1 {
+    color: darkslategray;
+    background-color: lightcoral;
+}
+
+/* Styling for unordered list */
+ul {
+    padding: 10px;
+    background-color: #e0f7fa;
+}
+
+/* Class selector: .first */
+.first {
+    background-color: lightgreen;
+    font-style: italic;
+}
+
+/* ID selector: #unique */
+#unique {
+    background-color: lightcoral;
+    font-weight: bold;
+}
+
+/* Attribute selector for draggable */
+h2[draggable="true"] {
+    background-color: lightyellow;
+    border: 2px dashed black;
+}
+
+/* Child selector */
+section > p {
+    color: navy;
+    background-color: #f0f8ff;
+}

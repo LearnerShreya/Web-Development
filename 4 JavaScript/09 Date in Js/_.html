@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Date and Time Notes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            color: #444;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 2px 5px;
+            border-radius: 5px;
+            color: #c7254e;
+            font-family: Consolas, 'Courier New', monospace;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Date and Time</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                The <code>Date</code> object in JavaScript is used to handle dates and times. It provides methods to perform operations like getting and setting dates, manipulating time zones, and more.
+            </p>
+        </section>
+
+        <section>
+            <h2>Creating Date Objects</h2>
+            <p>There are several ways to create a <code>Date</code> object:</p>
+            <ul>
+                <li><strong>Current Date and Time:</strong></li>
+                <pre><code>let currentDate = new Date();</code></pre>
+                <li><strong>Specific Date:</strong></li>
+                <pre><code>let specificDate = new Date("2024-12-01");</code></pre>
+                <li><strong>Using Year, Month, Day, etc.:</strong></li>
+                <pre><code>let customDate = new Date(2024, 11, 1, 10, 30, 0);</code></pre>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Getting Date and Time Components</h2>
+            <p>Methods to retrieve specific components of the date:</p>
+            <ul>
+                <li><code>getFullYear()</code>: Returns the year.</li>
+                <li><code>getMonth()</code>: Returns the month (0-11).</li>
+                <li><code>getDate()</code>: Returns the day of the month.</li>
+                <li><code>getDay()</code>: Returns the day of the week (0-6).</li>
+                <li><code>getHours()</code>, <code>getMinutes()</code>, <code>getSeconds()</code>, <code>getMilliseconds()</code>: Return respective time components.</li>
+            </ul>
+            <pre><code>
+let now = new Date();
+console.log(now.getFullYear()); // Example: 2024
+console.log(now.getMonth());    // Example: 11 (December)
+console.log(now.getDate());     // Example: 1
+console.log(now.getDay());      // Example: 0 (Sunday)
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Formatting Date and Time</h2>
+            <p>
+                JavaScript allows formatting using various methods:
+            </p>
+            <ul>
+                <li><code>toDateString()</code>: Converts the date to a readable string.</li>
+                <li><code>toISOString()</code>: Returns ISO format (e.g., <code>2024-12-01T00:00:00.000Z</code>).</li>
+                <li><code>toLocaleDateString()</code>: Formats the date based on locale settings.</li>
+            </ul>
+            <pre><code>
+let today = new Date();
+console.log(today.toDateString());  // Example: "Sun Dec 1 2024"
+console.log(today.toISOString());  // Example: "2024-12-01T00:00:00.000Z"
+console.log(today.toLocaleDateString("en-US")); // Example: "12/1/2024"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Manipulating Date and Time</h2>
+            <p>You can modify date components using setter methods:</p>
+            <ul>
+                <li><code>setFullYear()</code>, <code>setMonth()</code>, <code>setDate()</code></li>
+                <li><code>setHours()</code>, <code>setMinutes()</code>, <code>setSeconds()</code></li>
+            </ul>
+            <pre><code>
+let eventDate = new Date();
+eventDate.setFullYear(2025);
+eventDate.setMonth(0); // January
+eventDate.setDate(15);
+console.log(eventDate.toDateString()); // Example: "Wed Jan 15 2025"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Advanced Date Operations</h2>
+            <p>Use <code>Date.now()</code> to get the current timestamp in milliseconds since January 1, 1970.</p>
+            <pre><code>
+let timestamp = Date.now();
+console.log(timestamp); // Example: 1704067200000
+            </code></pre>
+            <p>To calculate date differences, subtract two <code>Date</code> objects.</p>
+            <pre><code>
+let date1 = new Date("2024-12-01");
+let date2 = new Date("2024-12-10");
+let difference = date2 - date1; // Difference in milliseconds
+console.log(difference / (1000 * 60 * 60 * 24)); // Days: 9
+            </code></pre>
+        </section>
+    </main>
+    <footer>
+        © 2024 JavaScript Notes by Shreya Singh
+    </footer>
+</body>
+</html>

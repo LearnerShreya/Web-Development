@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+}
+
+
+.japan{
+    background-color: rgb(158, 37, 37);
+    border-radius: 100vh;
+    width: 60vh;
+    height: 60vh;
+    margin: auto;
+    margin-top: 20vh;
+    /* margin: auto; horizontally chizo ko center pe la ke rakh deta hai */
+}

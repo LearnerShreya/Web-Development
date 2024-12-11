@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Decoration Guide</title>
+    <style>
+        /* Basic styles */
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .example { border: 1px solid #ccc; padding: 10px; margin: 10px 0; background-color: #f9f9f9; }
+        .section-title { font-size: 1.2em; font-weight: bold; color: #333; margin-top: 20px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>Text Decoration in CSS</h1>
+    <p>This document explains the various text decoration properties in CSS, with detailed examples and visual output.</p>
+
+    <!-- 1. text-decoration-line -->
+    <div class="section-title">1. text-decoration-line</div>
+    <p>The <code>text-decoration-line</code> property specifies which line decoration is applied to the text. Possible values include:</p>
+    <ul>
+        <li><strong>overline</strong>: Adds a line above the text.</li>
+        <li><strong>line-through</strong>: Adds a line through the text, indicating deletion or strikethrough.</li>
+        <li><strong>underline</strong>: Adds a line beneath the text, commonly used for links.</li>
+        <li><strong>overline underline</strong>: Combines both overline and underline effects.</li>
+    </ul>
+
+    <div class="example">
+        <p style="text-decoration-line: overline;">This text has an overline.</p>
+        <p style="text-decoration-line: line-through;">This text has a line through it (strikethrough).</p>
+        <p style="text-decoration-line: underline;">This text is underlined.</p>
+        <p style="text-decoration-line: overline underline;">This text has both overline and underline.</p>
+    </div>
+    <pre>
+    /* Code Example */
+    p {
+        text-decoration-line: underline; /* Or overline, line-through, or a combination */
+    }
+    </pre>
+    <p><strong>Summary:</strong> The <code>text-decoration-line</code> property allows you to apply one or more lines (overline, underline, line-through) to text, improving readability or indicating special meaning.</p>
+
+    <!-- 2. text-decoration-color -->
+    <div class="section-title">2. text-decoration-color</div>
+    <p>The <code>text-decoration-color</code> property sets the color of the text decoration line(s).</p>
+    <ul>
+        <li><strong>Example</strong>: Using a color like <code>red</code>, <code>blue</code>, or any CSS color code.</li>
+    </ul>
+
+    <div class="example">
+        <p style="text-decoration-line: underline; text-decoration-color: red;">This text is underlined with a red color.</p>
+        <p style="text-decoration-line: line-through; text-decoration-color: blue;">This text has a strikethrough with blue color.</p>
+    </div>
+    <pre>
+    /* Code Example */
+    p {
+        text-decoration-color: red; /* Or any valid color */
+    }
+    </pre>
+    <p><strong>Summary:</strong> The <code>text-decoration-color</code> property allows you to customize the color of the text decoration, making it stand out or match the page's design theme.</p>
+
+    <!-- 3. text-decoration-style -->
+    <div class="section-title">3. text-decoration-style</div>
+    <p>The <code>text-decoration-style</code> property defines the style of the text decoration line(s). It can take the following values:</p>
+    <ul>
+        <li><strong>solid</strong>: A solid line (default).</li>
+        <li><strong>dotted</strong>: A dotted line.</li>
+        <li><strong>dashed</strong>: A dashed line.</li>
+        <li><strong>wavy</strong>: A wavy line.</li>
+    </ul>
+
+    <div class="example">
+        <p style="text-decoration-line: underline; text-decoration-style: solid;">This text is underlined with a solid line.</p>
+        <p style="text-decoration-line: underline; text-decoration-style: dotted;">This text is underlined with a dotted line.</p>
+        <p style="text-decoration-line: underline; text-decoration-style: dashed;">This text is underlined with a dashed line.</p>
+        <p style="text-decoration-line: underline; text-decoration-style: wavy;">This text is underlined with a wavy line.</p>
+    </div>
+    <pre>
+    /* Code Example */
+    p {
+        text-decoration-style: dotted; /* Or solid, dashed, wavy */
+    }
+    </pre>
+    <p><strong>Summary:</strong> The <code>text-decoration-style</code> property modifies the appearance of the decoration line, making it solid, dotted, dashed, or wavy depending on the design requirement.</p>
+
+    <!-- 4. text-decoration-thickness -->
+    <div class="section-title">4. text-decoration-thickness</div>
+    <p>The <code>text-decoration-thickness</code> property controls the thickness of the text decoration line. You can set it using:</p>
+    <ul>
+        <li><strong>auto</strong>: The default thickness of the line.</li>
+        <li><strong>length</strong>: A specific thickness value, such as <code>2px</code>, <code>0.1em</code>, etc.</li>
+    </ul>
+
+    <div class="example">
+        <p style="text-decoration-line: underline; text-decoration-thickness: 3px;">This text has a 3px thick underline.</p>
+        <p style="text-decoration-line: underline; text-decoration-thickness: 0.1em;">This text has a thinner underline using em units.</p>
+        <p style="text-decoration-line: underline; text-decoration-thickness: auto;">This text has the default underline thickness.</p>
+    </div>
+    <pre>
+    /* Code Example */
+    p {
+        text-decoration-thickness: 3px; /* Or auto, 0.1em, etc. */
+    }
+    </pre>
+    <p><strong>Summary:</strong> The <code>text-decoration-thickness</code> property enables control over the thickness of text decoration lines, allowing you to make them thicker or thinner as per design needs.</p>
+
+
+    <ul>
+        <li><strong>Text Decoration Line (<code>text-decoration-line</code>):</strong> This property allows applying different types of line decorations to text, including overline, underline, and line-through.</li>
+        <li><strong>Text Decoration Color (<code>text-decoration-color</code>):</strong> You can specify the color of the line decoration, which can be customized using any valid CSS color (like red, blue, hex, or RGB).</li>
+        <li><strong>Text Decoration Style (<code>text-decoration-style</code>):</strong> This property lets you choose the style of the decoration line, such as solid, dotted, dashed, or wavy.</li>
+        <li><strong>Text Decoration Thickness (<code>text-decoration-thickness</code>):</strong> Controls the thickness of the text decoration line, allowing values like auto, px, or em for finer control over the appearance of underlines or other decorations.</li>
+    </ul>
+    
+</body>
+</html>

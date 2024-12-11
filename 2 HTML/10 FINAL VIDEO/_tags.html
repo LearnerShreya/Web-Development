@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block vs Inline Elements - Complete List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        td code {
+            background-color: #e0e0e0;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Block Elements - Common Tags with Explanations and Examples</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tag</th>
+                <th>Explanation</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;div&gt;...&lt;/div&gt;</code></td>
+                <td>A container for grouping block-level content. It doesn’t add any styling by itself but is often used with CSS for layout purposes.</td>
+                <td><div style="border: 1px solid black; padding: 10px;">Example of a div</div></td>
+            </tr>
+            <tr>
+                <td><code>&lt;p&gt;...&lt;/p&gt;</code></td>
+                <td>Defines a paragraph of text.</td>
+                <td><p>This is a paragraph.</p></td>
+            </tr>
+            <tr>
+                <td><code>&lt;h1&gt; to &lt;h6&gt;</code></td>
+                <td>Defines headings. <code>&lt;h1&gt;</code> is the largest and <code>&lt;h6&gt;</code> is the smallest.</td>
+                <td>
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                </td>
+            </tr>
+            <tr>
+                <td><code>&lt;article&gt;...&lt;/article&gt;</code></td>
+                <td>Represents an independent section of content, like a blog post.</td>
+                <td><article>Content of an article.</article></td>
+            </tr>
+            <tr>
+                <td><code>&lt;section&gt;...&lt;/section&gt;</code></td>
+                <td>Divides content into thematic sections.</td>
+                <td><section>Content of a section.</section></td>
+            </tr>
+            <tr>
+                <td><code>&lt;header&gt;...&lt;/header&gt;</code></td>
+                <td>Defines a header for a document or a section, typically containing introductory content.</td>
+                <td><header>Header of the page</header></td>
+            </tr>
+            <tr>
+                <td><code>&lt;footer&gt;...&lt;/footer&gt;</code></td>
+                <td>Defines a footer for a document or section, usually containing metadata or links.</td>
+                <td><footer>Footer content here.</footer></td>
+            </tr>
+            <tr>
+                <td><code>&lt;nav&gt;...&lt;/nav&gt;</code></td>
+                <td>Defines a section for navigation links.</td>
+                <td><nav>Navigation links go here.</nav></td>
+            </tr>
+            <tr>
+                <td><code>&lt;blockquote&gt;...&lt;/blockquote&gt;</code></td>
+                <td>Used for longer quotations, typically displayed as an indented block.</td>
+                <td><blockquote>This is a blockquote example.</blockquote></td>
+            </tr>
+            <tr>
+                <td><code>&lt;ul&gt;...&lt;/ul&gt;, &lt;ol&gt;...&lt;/ol&gt;, &lt;li&gt;...&lt;/li&gt;</code></td>
+                <td>Creates unordered (<code>&lt;ul&gt;</code>) or ordered (<code>&lt;ol&gt;</code>) lists. <code>&lt;li&gt;</code> represents each list item.</td>
+                <td>
+                    <ul>
+                        <li>Unordered List Item 1</li>
+                        <li>Unordered List Item 2</li>
+                    </ul>
+                    <ol>
+                        <li>Ordered List Item 1</li>
+                        <li>Ordered List Item 2</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td><code>&lt;table&gt;...&lt;/table&gt;</code></td>
+                <td>Defines a table with rows and columns. Must contain <code>&lt;tr&gt;</code> (table rows), <code>&lt;td&gt;</code> (table cells), and optionally <code>&lt;th&gt;</code> (table headers).</td>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <th>Header 1</th>
+                            <th>Header 2</th>
+                        </tr>
+                        <tr>
+                            <td>Row 1, Col 1</td>
+                            <td>Row 1, Col 2</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td><code>&lt;form&gt;...&lt;/form&gt;</code></td>
+                <td>Wraps form elements like input fields, buttons, and labels to collect user input.</td>
+                <td>
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Inline Elements - Common Tags with Explanations and Examples</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tag</th>
+                <th>Explanation</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;span&gt;...&lt;/span&gt;</code></td>
+                <td>A generic inline container for text, used to apply styles without breaking the flow of text.</td>
+                <td><span style="background-color: lightblue;">This is a span</span></td>
+            </tr>
+            <tr>
+                <td><code>&lt;strong&gt;...&lt;/strong&gt;</code></td>
+                <td>Indicates important text, usually displayed in bold.</td>
+                <td><strong>This is bold text</strong></td>
+            </tr>
+            <tr>
+                <td><code>&lt;em&gt;...&lt;/em&gt;</code></td>
+                <td>Emphasizes text, typically shown in italics.</td>
+                <td><em>This is italic text</em></td>
+            </tr>
+            <tr>
+                <td><code>&lt;u&gt;...&lt;/u&gt;</code></td>
+                <td>Underlines the enclosed text.</td>
+                <td><u>This is underlined text</u></td>
+            </tr>
+            <tr>
+                <td><code>&lt;a&gt;...&lt;/a&gt;</code></td>
+                <td>Defines a hyperlink, linking to another webpage or location.</td>
+                <td><a href="#">This is a link</a></td>
+            </tr>
+            <tr>
+                <td><code>&lt;img&gt;</code></td>
+                <td>Inserts an image into the page. This is a self-closing tag.</td>
+                <td><img src="https://via.placeholder.com/100" alt="Example Image"></td>
+            </tr>
+            <tr>
+                <td><code>&lt;mark&gt;...&lt;/mark&gt;</code></td>
+                <td>Highlights text by displaying it with a background color.</td>
+                <td><mark>This is highlighted text</mark></td>
+            </tr>
+            <tr>
+                <td><code>&lt;code&gt;...&lt;/code&gt;</code></td>
+                <td>Renders text in a monospace font, ideal for displaying code snippets.</td>
+                <td><code>This is inline code</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;br&gt;</code></td>d:\(0 to W)\HTML.project\2formating.html
+                <td>Inserts a line break. This is a self-closing tag.</td>
+                <td>This is the first line<br>This is the second line</td>
+            </tr>
+            <tr>
+                <td><code>&lt;sub&gt;...&lt;/sub&gt;</code></td>
+                <td>Displays subscript text, commonly used in formulas.</td>
+                <td>E = mc<sub>2</sub></td>
+            </tr>
+            <tr>
+                <td><code>&lt;sup&gt;...&lt;/sup&gt;</code></td>
+                <td>Displays superscript text.</td>
+                <td>x<sup>2</sup></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Index Detailed Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        .section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .example, .visual {
+            background-color: #f0f8ff;
+            border-left: 4px solid #0056b3;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .visual {
+            text-align: center;
+            padding: 20px;
+        }
+        .key-point, .use-case, .note {
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .key-point { background-color: #e6f7ff; }
+        .use-case { background-color: #e7ffe6; }
+        .note { background-color: #fff5e6; }
+    </style>
+</head>
+<body>
+
+    <h1>Z-Index Detailed Notes</h1>
+
+    <!-- Z-Index Overview -->
+    <div class="section">
+        <h2>Z-Index Overview</h2>
+        <p>The <code>z-index</code> property in CSS controls the stacking order of elements along the z-axis (vertical axis). It determines the order in which elements are displayed on the screen when they overlap.</p>
+    </div>
+
+    <!-- Key Points Section -->
+    <div class="section">
+        <h2>Key Points</h2>
+        <ul>
+            <li><strong>Higher z-index values</strong> bring elements to the front.</li>
+            <li><strong>Elements with the same z-index</strong> will stack in the order they appear in the HTML code.</li>
+            <li><strong>Only works on positioned elements</strong> (i.e., elements with a position property other than <code>static</code>, such as <code>relative</code>, <code>absolute</code>, <code>fixed</code>, or <code>sticky</code>).</li>
+            <li>It is important to remember that <code>z-index</code> does not affect elements that do not overlap each other.</li>
+        </ul>
+    </div>
+
+    <!-- Example Usage Section -->
+    <div class="section">
+        <h2>Example Usage</h2>
+        <div class="example">
+            <code>
+                .box1 { position: absolute; z-index: 10; background-color: lightcoral; }<br>
+                .box2 { position: absolute; z-index: 5; background-color: lightblue; }
+            </code>
+        </div>
+    </div>
+
+    <!-- Visual Example Section -->
+    <div class="section">
+        <h2>Visual Example</h2>
+        <div class="visual">
+            <div style="position: relative; height: 150px;">
+                <div style="position: absolute; z-index: 5; width: 100px; height: 100px; background-color: lightblue;">Box 2 (z-index: 5)</div>
+                <div style="position: absolute; z-index: 10; width: 100px; height: 100px; background-color: lightcoral; left: 30px;">Box 1 (z-index: 10)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Use Cases Section -->
+    <div class="section">
+        <h2>Common Use Cases</h2>
+        <ul>
+            <li>Used in layered designs such as modals, tooltips, and dropdowns.</li>
+            <li>Helpful in handling overlapping content in user interfaces.</li>
+            <li>Can be used to ensure certain elements are always visible, such as sticky navigation bars or floating action buttons.</li>
+        </ul>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="section">
+        <h2>Notes</h2>
+        <div class="note">
+            <p>The <code>z-index</code> property can be tricky to debug, especially when multiple elements have complex stacking contexts. You may need to ensure that a parent container has a positioning value (e.g., <code>relative</code>) for the child elements to respect the stacking order.</p>
+        </div>
+    </div>
+
+    <!-- Explanation Section -->
+    <div class="section">
+        <h2>Explanation</h2>
+        <p>This HTML provides a structured, detailed guide for understanding the <code>z-index</code> property:</p>
+        <ul>
+            <li><strong>Z-Index Overview:</strong> Provides a clear explanation of what <code>z-index</code> does and how it affects the stacking order of overlapping elements.</li>
+            <li><strong>Key Points:</strong> Highlights the main rules for how <code>z-index</code> works.</li>
+            <li><strong>Example Usage:</strong> Shows how to use <code>z-index</code> in code to control stacking order.</li>
+            <li><strong>Visual Example:</strong> Includes a simple visual representation where two boxes are stacked with different <code>z-index</code> values.</li>
+            <li><strong>Common Use Cases:</strong> Lists scenarios where <code>z-index</code> is typically used.</li>
+            <li><strong>Notes:</strong> Offers helpful tips on debugging and working with <code>z-index</code> effectively.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

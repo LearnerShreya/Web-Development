@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators - Detailed Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h3 {
+            color: #2980b9;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        .note {
+            background-color: #97caae;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 5px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Operation Rules</h1>
+
+    <p>JavaScript is a versatile language that follows specific rules while performing operations. Understanding how JavaScript handles different types of operations, precedence, type conversion, and evaluation rules is critical for writing correct and efficient code. This document explains the core operation rules in JavaScript.</p>
+
+    <h2>1. Operator Precedence</h2>
+    <p>Operator precedence determines the order in which operators are evaluated in an expression. Operators with higher precedence are evaluated first. If operators have the same precedence, they are evaluated based on their associativity (either left-to-right or right-to-left).</p>
+    <p>The following table lists the operators in order of precedence, from highest to lowest:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Precedence Level</th>
+                <th>Associativity</th>
+                <th>Example</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>() [] .</td>
+                <td>Highest</td>
+                <td>Left to Right</td>
+                <td>5 + (2 * 3)</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>++ --</td>
+                <td>Higher</td>
+                <td>Right to Left</td>
+                <td>++x</td>
+                <td>Increment variable x before use</td>
+            </tr>
+            <tr>
+                <td>! ~ typeof void</td>
+                <td>Higher</td>
+                <td>Right to Left</td>
+                <td>!true</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>* / %</td>
+                <td>Medium</td>
+                <td>Left to Right</td>
+                <td>5 * 3</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>+ -</td>
+                <td>Medium</td>
+                <td>Left to Right</td>
+                <td>5 - 2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>&amp;&amp; ||</td>
+                <td>Lower</td>
+                <td>Left to Right</td>
+                <td>true && false</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>== != === !==</td>
+                <td>Low</td>
+                <td>Left to Right</td>
+                <td>5 == '5'</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>= += -= *= /=</td>
+                <td>Lowest</td>
+                <td>Right to Left</td>
+                <td>x = 5</td>
+                <td>x is assigned 5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Type Coercion and Conversion</h2>
+    <p>JavaScript performs automatic type conversion (also known as coercion) when performing operations with different data types. This means that JavaScript will try to convert one type into another when needed. Below are some common rules of type conversion:</p>
+
+    <h3>String + Number</h3>
+    <p>If one of the operands is a string, the other operand is converted to a string, and concatenation occurs.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Expression</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>'5' + 2</td>
+                <td>'52' (String)</td>
+            </tr>
+            <tr>
+                <td>'Hello' + 5</td>
+                <td>'Hello5' (String)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>String - Number</h3>
+    <p>If one of the operands is a string and the other is a number, JavaScript will attempt to convert the string to a number. If conversion fails, the result is NaN.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Expression</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>'5' - 2</td>
+                <td>3 (Number)</td>
+            </tr>
+            <tr>
+                <td>'5' - '2'</td>
+                <td>3 (Number)</td>
+            </tr>
+            <tr>
+                <td>'5' - 'hello'</td>
+                <td>NaN (Not-a-Number)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Boolean to Number</h3>
+    <p>Boolean values are coerced to numbers when used in arithmetic operations. True becomes 1 and false becomes 0.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Expression</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>true + 1</td>
+                <td>2 (Number)</td>
+            </tr>
+            <tr>
+                <td>false + 1</td>
+                <td>1 (Number)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Null to Number</h3>
+    <p>Null is coerced to 0 when used in numeric operations.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Expression</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>null + 1</td>
+                <td>1 (Number)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Undefined to Number</h3>
+    <p>Undefined results in NaN when coerced to a number.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Expression</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>undefined + 1</td>
+                <td>NaN (Not-a-Number)</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+    <h3>NaN Behavior</h3>
+    <p>The value NaN (Not-a-Number) is returned when an operation cannot produce a valid number. It's important to note that NaN is not equal to any other number, even itself.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Expression</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>NaN === NaN</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>isNaN(NaN)</td>
+                <td>true</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Equality Comparison</h3>
+    <p>In JavaScript, the == operator performs type coercion, while === checks both value and type equality.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Expression</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>5 == '5'</td>
+                <td>true (Loose equality)</td>
+            </tr>
+            <tr>
+                <td>5 === '5'</td>
+                <td>false (Strict equality)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Short-circuit Evaluation</h3>
+    <p>In logical operations, JavaScript can evaluate expressions with short-circuit behavior. For example, in an OR operation, if the first operand is true, the second operand is not evaluated.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Expression</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>true || false</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>false && true</td>
+                <td>false</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Comparison Operators</h2>
+    <p>JavaScript provides comparison operators that allow you to compare values. These operators include:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Meaning</th>
+                <th>Example</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>==</td>
+                <td>Loose Equality</td>
+                <td>5 == '5'</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>===</td>
+                <td>Strict Equality (checks value and type)</td>
+                <td>5 === '5'</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>Loose Inequality</td>
+                <td>5 != '5'</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>!==</td>
+                <td>Strict Inequality (checks value and type)</td>
+                <td>5 !== '5'</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>Greater than</td>
+                <td>5 > 3</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>Less than</td>
+                <td>5 < 3</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>&gt;=</td>
+                <td>Greater than or equal to</td>
+                <td>5 >= 3</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>&lt;=</td>
+                <td>Less than or equal to</td>
+                <td>5 <= 3</td>
+                <td>false</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="note">
+        <h3>Note:</h3>
+        <p>Be cautious when using loose equality (==) because it performs type coercion. It is generally recommended to use strict equality (===) to avoid unexpected behavior.</p>
+    </div>
+
+
+
+
+
+    <h1>JavaScript Operators - Detailed Notes</h1>
+    
+    <p>In JavaScript, operators are symbols that perform operations on values and variables. They are classified into various types:</p>
+
+    <h2>1. Arithmetic Operators</h2>
+    <p>Arithmetic operators are used to perform mathematical operations.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+                <th>Example</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>+</td>
+                <td>Addition: Adds two operands.</td>
+                <td>5 + 3</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Subtraction: Subtracts the right operand from the left operand.</td>
+                <td>5 - 3</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Multiplication: Multiplies two operands.</td>
+                <td>5 * 3</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Division: Divides the left operand by the right operand.</td>
+                <td>5 / 2</td>
+                <td>2.5</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Modulus: Returns the remainder of a division operation.</td>
+                <td>5 % 2</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>**</td>
+                <td>Exponentiation: Raises the base (left operand) to the power of the exponent (right operand).</td>
+                <td>5 ** 2</td>
+                <td>25</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Assignment Operators</h2>
+    <p>Assignment operators are used to assign values to variables.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+                <th>Example</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>=</td>
+                <td>Simple Assignment: Assigns the value on the right to the variable on the left.</td>
+                <td>let a = 5</td>
+                <td>a = 5</td>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>Addition Assignment: Adds the right operand to the left operand and assigns the result to the left operand.</td>
+                <td>a += 3</td>
+                <td>a = 8</td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>Subtraction Assignment: Subtracts the right operand from the left operand and assigns the result to the left operand.</td>
+                <td>a -= 3</td>
+                <td>a = 2</td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>Multiplication Assignment: Multiplies the left operand by the right operand and assigns the result to the left operand.</td>
+                <td>a *= 3</td>
+                <td>a = 15</td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>Division Assignment: Divides the left operand by the right operand and assigns the result to the left operand.</td>
+                <td>a /= 3</td>
+                <td>a = 1.6667</td>
+            </tr>
+            <tr>
+                <td>%=</td>
+                <td>Modulus Assignment: Assigns the remainder of the division of the left operand by the right operand to the left operand.</td>
+                <td>a %= 3</td>
+                <td>a = 2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Comparison Operators</h2>
+    <p>Comparison operators are used to compare two values or expressions.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+                <th>Example</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>==</td>
+                <td>Equal to: Returns true if the operands are equal.</td>
+                <td>5 == 5</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>===</td>
+                <td>Strict equal to: Returns true if the operands are equal and of the same type.</td>
+                <td>5 === "5"</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>Not equal to: Returns true if the operands are not equal.</td>
+                <td>5 != 3</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>!==</td>
+                <td>Strict not equal to: Returns true if the operands are not equal or not of the same type.</td>
+                <td>5 !== "5"</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>Greater than: Returns true if the left operand is greater than the right operand.</td>
+                <td>5 > 3</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>Less than: Returns true if the left operand is less than the right operand.</td>
+                <td>5 < 3</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>&gt;=</td>
+                <td>Greater than or equal to: Returns true if the left operand is greater than or equal to the right operand.</td>
+                <td>5 >= 3</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>&lt;=</td>
+                <td>Less than or equal to: Returns true if the left operand is less than or equal to the right operand.</td>
+                <td>5 <= 3</td>
+                <td>false</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. Logical Operators</h2>
+    <p>Logical operators are used to perform logical operations, mostly with Boolean values.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+                <th>Example</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&&</td>
+                <td>Logical AND: Returns true if both operands are true.</td>
+                <td>true && false</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>||</td>
+                <td>Logical OR: Returns true if at least one of the operands is true.</td>
+                <td>true || false</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>!</td>
+                <td>Logical NOT: Reverses the logical state of its operand. Returns true if the operand is false, and false if the operand is true.</td>
+                <td>!true</td>
+                <td>false</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>5. Ternary Operator</h2>
+    <p>The ternary operator is a shorthand for the if-else statement. It takes three operands.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+                <th>Example</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>condition ? expr1 : expr2</td>
+                <td>Returns expr1 if the condition is true; otherwise, returns expr2.</td>
+                <td>5 > 3 ? "Yes" : "No"</td>
+                <td>Yes</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>6. Type Operators</h2>
+    <p>Type operators are used to check or convert the data types of values.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+                <th>Example</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>typeof</td>
+                <td>Returns the type of a variable.</td>
+                <td>typeof 5</td>
+                <td>number</td>
+            </tr>
+            <tr>
+                <td>instanceof</td>
+                <td>Checks whether an object is an instance of a particular class.</td>
+                <td>[1, 2, 3] instanceof Array</td>
+                <td>true</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>7. Increment and Decrement Operators</h2>
+    <p>These operators are used to increase or decrease the value of a variable by 1.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Operator</th>
+                <th>Description</th>
+                <th>Example</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>++</td>
+                <td>Increment: Increases the value of a variable by 1.</td>
+                <td>let a = 5; a++</td>
+                <td>a = 6</td>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>Decrement: Decreases the value of a variable by 1.</td>
+                <td>let a = 5; a--</td>
+                <td>a = 4</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h2>8. Bitwise Operators</h2>
+<p>These operators perform bit-level operations on operands.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Example</th>
+            <th>Output</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>&</td>
+            <td>Bitwise AND: Performs a logical AND operation on each pair of corresponding bits in two numbers.</td>
+            <td>let a = 5; let b = 3; a & b</td>
+            <td>1 (Binary: 0101 & 0011 = 0001)</td>
+        </tr>
+        <tr>
+            <td>|</td>
+            <td>Bitwise OR: Performs a logical OR operation on each pair of corresponding bits in two numbers.</td>
+            <td>let a = 5; let b = 3; a | b</td>
+            <td>7 (Binary: 0101 | 0011 = 0111)</td>
+        </tr>
+        <tr>
+            <td>^</td>
+            <td>Bitwise XOR: Performs a logical XOR operation on each pair of corresponding bits in two numbers.</td>
+            <td>let a = 5; let b = 3; a ^ b</td>
+            <td>6 (Binary: 0101 ^ 0011 = 0110)</td>
+        </tr>
+        <tr>
+            <td>~</td>
+            <td>Bitwise NOT: Inverts each bit of a number.</td>
+            <td>let a = 5; ~a</td>
+            <td>-6 (Binary: ~0101 = 1010, in two's complement = -6)</td>
+        </tr>
+        <tr>
+            <td>&lt;&lt;</td>
+            <td>Left Shift: Shifts bits of a number to the left, filling with zeros.</td>
+            <td>let a = 5; a &lt;&lt; 1</td>
+            <td>10 (Binary: 0101 &lt;&lt; 1 = 1010)</td>
+        </tr>
+        <tr>
+            <td>&gt;&gt;</td>
+            <td>Right Shift: Shifts bits of a number to the right, keeping the sign bit intact.</td>
+            <td>let a = 5; a &gt;&gt; 1</td>
+            <td>2 (Binary: 0101 &gt;&gt; 1 = 0010)</td>
+        </tr>
+        <tr>
+            <td>&gt;&gt;&gt;</td>
+            <td>Zero-fill Right Shift: Shifts bits of a number to the right, filling with zeros.</td>
+            <td>let a = 5; a &gt;&gt;&gt; 1</td>
+            <td>2 (Binary: 0101 &gt;&gt;&gt; 1 = 0010)</td>
+        </tr>
+    </tbody>
+</table>
+
+
+    <div class="note">
+        <p><strong>Note:</strong> JavaScript's dynamic typing means you don't need to declare a variable's type explicitly. The type of a variable is determined based on the value it holds. Operators like <code>typeof</code> help you check a variable's type at runtime.</p>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>Understanding these operators and their behavior is essential for writing clean and efficient JavaScript code. They help in manipulating data, making decisions, and performing mathematical, logical, and comparison operations.</p>
+</body>
+</html>

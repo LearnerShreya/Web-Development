@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Allocation in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            margin: 20px;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        h3 {
+            color: #97403a;
+        }
+        .content {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .diagram {
+            border: 2px dashed #4CAF50;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #e8f5e9;
+            margin: 10px;
+            width: 320px;
+            text-align: center;
+        }
+        .box {
+            border: 1px solid #333;
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .stack, .heap {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            height: auto;
+            padding: 10px;
+        }
+        .stack {
+            background-color: #d7f9fc;
+            border: 2px solid #009688;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .heap {
+            background-color: #ffe0b2;
+            border: 2px solid #fb8c00;
+            border-radius: 5px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .highlight {
+            color: #009688;
+            font-weight: bold;
+        }
+        .box[style*="opacity: 0.5"] {
+            background-color: #ffebee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Memory Allocation in JavaScript</h1>
+    <p class="content">JavaScript handles memory through two primary areas: the <span class="highlight">Stack</span> and the <span class="highlight">Heap</span>. The Stack is used for static memory allocation (primitive values and function calls), while the Heap is used for dynamic memory allocation (objects and arrays).</p>
+
+    <h2>1. Stack vs Heap Memory</h2>
+    
+    <div class="content">
+        <p>JavaScript uses <b>stack</b> for storing static data and <b>heap</b> for storing dynamic objects.</p>
+            <h3>Stack</h3>
+            <ul>
+                <li>Stores data <b>sequentially</b> with a predictable order.</li>
+                <li>Contains fixed-size data: primitives, function calls, and references to heap objects.</li>
+                <li>Fast access due to the Last-In-First-Out (LIFO) structure.</li>
+                <li>Memory is automatically managed, making it efficient.</li>
+                <li>Limited in size, typically smaller than the heap.</li>
+                <li>Prone to <b>stack overflow</b> when there are too many function calls or large local variables. </li>
+                <li>Thread-specific: Each thread in a multi-threaded environment gets its own stack.</li>
+            </ul>
+            <h3>Heap</h3>
+            <ul>
+                <li>Stores data in a <b>random order</b>, not sequential.</li>
+                <li>Slower access due to memory being scattered.</li>
+                <li>Used for dynamic, flexible-size objects such as arrays and objects.</li>
+                <li>Relies on <b>garbage collection</b> to free up unused memory.</li>
+                <li>Prone to <b>memory leaks</b> if objects are improperly referenced.</li>
+                <li>Allows for global access if references are passed.</li>
+                <li>Memory fragmentation may occur due to scattered allocations.</li>
+                <li>Supports complex relationships (e.g., arrays inside objects).</li>
+            </ul>
+
+        <div class="diagram-container">
+            <div class="diagram">
+                <h3>Stack Memory</h3>
+                <div class="stack">
+                    <div class="box">Primitive: x = 10</div>
+                    <div class="box">Primitive: y = "Hello"</div>
+                    <div class="box">Reference: arr →</div>
+                </div>
+            </div>
+            <div class="diagram">
+                <h3>Heap Memory</h3>
+                <div class="heap">
+                    <div class="box">Array: [1, 2, 3]</div>
+                    <div class="box">Object: {name: "Shreya"}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="diagram-container">
+        <div class="diagram">
+            <h3>Memory Allocation</h3>
+            <pre>
+            |      Higher Addresses       |
+            |           Heap ↑            |
+            |                             |
+            |      Free Memory Space      |
+            |                             |
+            |           Stack ↓           |
+            |      Lower Addresses        |
+            </pre>
+        </div>
+    </div>
+
+    <div class="content">
+    <h3>Code Example: Stack and Heap Behavior</h3>
+    <pre class="code-example">
+    // Stack Example
+    let num = 10;       // Primitive stored in stack
+    let str = "Hello";  // Primitive stored in stack
+
+    // Heap Example
+    let obj = {         // Object stored in heap
+        name: "Shreya",
+        age: 21
+    };
+    let arr = [1, 2, 3]; // Array stored in heap
+
+    // Reference Example
+    let ref = obj;      // Both 'obj' and 'ref' point to the same heap memory
+    ref.age = 22;       // Changes affect both 'obj' and 'ref'
+    console.log(obj.age); // Output: 22
+    </pre>
+
+    <h3>Key Takeaways</h3>
+    <div class="key-points">
+        <h3>Stack:</h3>
+        <ul>
+            <li>Predictable and fast memory usage.</li>
+            <li>Used for primitives, function calls, and references.</li>
+        </ul>
+        <h3>Heap:</h3>
+        <ul>
+            <li>Flexible, larger memory space for dynamic objects.</li>
+            <li>Ideal for complex data structures and relationships.</li>
+        </ul>
+    </div>
+</div>
+</div>
+
+
+    <h2>2. Call by Value vs Call by Reference</h2>
+    <div class="content">
+        <p>JavaScript uses two ways of passing data:</p>
+        <ul>
+            <li><b>Call by Value:</b> For primitives, only the value is copied, creating independent variables.</li>
+            <li><b>Call by Reference:</b> For objects and arrays, only the memory reference is copied, so changes affect the original data.</li>
+        </ul>
+
+        <h3>Example</h3>
+        <pre><code>// Call by Value
+let num = 10;
+function modifyValue(x) {
+    x = 20;
+}
+modifyValue(num);
+console.log(num); // Output: 10 (Unchanged)
+
+// Call by Reference
+let obj = { name: "Shreya" };
+function modifyReference(o) {
+    o.name = "Gaurav";
+}
+modifyReference(obj);
+console.log(obj.name); // Output: "Gaurav"</code></pre>
+
+        <div class="diagram-container">
+            <div class="diagram">
+                <h3>Call by Value (Stack)</h3>
+                <div class="stack">
+                    <div class="box">num = 10</div>
+                    <div class="box">Copy: x = 10</div>
+                </div>
+            </div>
+            <div class="diagram">
+                <h3>Call by Reference (Heap)</h3>
+                <div class="stack">
+                    <div class="box">Reference: obj →</div>
+                </div>
+                <div class="heap">
+                    <div class="box">Object: {name: "Gaurav"}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>3. Mutable vs Immutable</h2>
+    <div class="content">
+        <p><b>Mutable:</b> Data that can be modified after creation (e.g., objects, arrays).</p>
+        <p><b>Immutable:</b> Data that cannot be modified after creation (e.g., strings, numbers, booleans, etc).</p>
+
+        <h3>Example</h3>
+        <pre><code>// Mutable Example
+let arr = [1, 2, 3];
+arr.push(4);
+console.log(arr); // Output: [1, 2, 3, 4]
+
+// Immutable Example
+let str = "Hello";
+str[0] = "h";
+console.log(str); // Output: "Hello" (unchanged)</code></pre>
+
+        <div class="diagram-container">
+            <div class="diagram">
+                <h3>Mutable (Heap)</h3>
+                <div class="stack">
+                    <div class="box">Reference: arr →</div>
+                </div>
+                <div class="heap">
+                    <div class="box">Array: [1, 2, 3, 4]</div>
+                </div>
+            </div>
+            <div class="diagram">
+                <h3>Immutable (Stack)</h3>
+                <div class="stack">
+                    <div class="box">str = "Hello"</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>4. Garbage Collection</h2>
+    <div class="content">
+        <p>JavaScript uses an automatic <b>garbage collection</b> process to remove objects that are no longer referenced, freeing up memory.</p>
+        <ul>
+            <li>Garbage collection uses the <b>mark-and-sweep algorithm</b>.</li>
+            <li>Objects without any references are marked as "garbage."</li>
+            <li>This prevents memory leaks by cleaning up unused memory.</li>
+        </ul>
+    </div>
+
+
+
+
+    <h2>5. Memory and File Deletion</h2>
+    <div class="content">
+        <p>When files or folders are deleted in a computer system, the following steps occur:</p>
+        <ul>
+            <li>The operating system removes the file's metadata (e.g., file name, size, and location) from the file system, marking the space as free.</li>
+            <li>The space previously occupied by the file is marked as free and available for new data.</li>
+            <li>The actual data remains on the disk until it is overwritten by new files or data.</li>
+        </ul>
+    </div>
+
+    <div class="diagram-container">
+        <div class="diagram">
+            <h3>Before Deletion</h3>
+            <ul>
+                <li><b>Metadata:</b> File Name: "report.docx", Location: Sector 105</li>
+                <li><b>Data:</b> Binary Content Stored in Sector 105</li>
+            </ul>
+            <div class="heap">
+                <div class="box">File Data</div>
+                <div class="box">Metadata</div>
+            </div>
+        </div>
+        <div class="diagram">
+            <h3>After Deletion</h3>
+            <ul>
+                <li><b>Metadata:</b> Removed (marked as free space).</li>
+                <li><b>Data:</b> Binary content still exists but is recoverable until overwritten.</li>
+            </ul>
+            <div class="heap">
+                <div class="box" style="opacity: 0.5;">File Data (Recoverable)</div>
+                <div class="box" style="opacity: 0.5;">Metadata (Removed)</div>
+            </div>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive JavaScript Notes: Numbers and Math</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+            color: #e74c3c;
+        }
+        ul {
+            margin: 10px 0;
+        }
+        .example {
+            background-color: #eef;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Comprehensive JavaScript Notes: Numbers and Math</h1>
+
+<!-- Section 1: Introduction to Numbers -->
+<div class="section">
+    <h2>Understanding Numbers in JavaScript</h2>
+    <p>In JavaScript, numbers can be represented in two ways:</p>
+    <ul>
+        <li>
+            <strong>Primitive Number:</strong> A simple numeric value like <code>231</code>.
+            <br>
+            <em>Example:</em>
+            <pre><code>let num1 = 231; // A primitive number</code></pre>
+        </li>
+        <li>
+            <strong>Number Object:</strong> A wrapped object created using the <code>new Number()</code> constructor.
+            <br>
+            <em>Example:</em>
+            <pre><code>
+let num2 = new Number(231); // A Number object
+let num3 = new Number(231); // Another Number object
+            </code></pre>
+        </li>
+    </ul>
+
+    <ol type="a">
+        <li>
+            <strong>Primitive vs Object Representation:</strong>
+            <ul>
+                <li><code>num1</code> is a primitive value directly holding the number <code>231</code>.</li>
+                <li><code>num2</code> and <code>num3</code> are Number objects with their own memory references.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Output of Values:</strong>
+            <ul>
+                <li><code>num1</code> directly outputs the value: <code>231</code>.</li>
+                <li><code>num2</code> and <code>num3</code> display their wrapped representation: <code>[Number: 231]</code>.</li>
+            </ul>
+            <pre><code>
+console.log(num1); // Output: 231
+console.log(num2); // Output: [Number: 231]
+console.log(num3); // Output: [Number: 231]
+            </code></pre>
+        </li>
+        <li>
+            <strong>Equality (==) vs Strict Equality (===):</strong>
+            <ul>
+                <li><strong>Loose Equality (==):</strong> Converts both operands to the same type before comparing. Example:
+                    <pre><code>console.log(num1 == num2); // true</code></pre>
+                </li>
+                <li><strong>Strict Equality (===):</strong> Compares both value and type without type conversion. Example:
+                    <pre><code>console.log(num1 === num2); // false</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Object Reference Comparison:</strong>
+            <ul>
+                <li>When comparing Number objects like <code>num2</code> and <code>num3</code>, JavaScript checks their references, not their values.</li>
+            </ul>
+            <pre><code>console.log(num2 == num3); // false</code></pre>
+        </li>
+        <li>
+            <strong>Type Checking with <code>typeof</code>:</strong>
+            <ul>
+                <li><code>num1</code> is a <strong>primitive number</strong>: <code>typeof num1</code> returns <code>"number"</code>.</li>
+                <li><code>num2</code> and <code>num3</code> are <strong>Number objects</strong>: <code>typeof</code> returns <code>"object"</code>.</li>
+            </ul>
+            <pre><code>
+console.log(typeof num1); // Output: number
+console.log(typeof num2); // Output: object
+console.log(typeof num3); // Output: object
+            </code></pre>
+        </li>
+        <h3>Summary</h3>
+        <p>
+            - Primitive numbers are simple values (e.g., <code>231</code>).
+            <br>
+            - Number objects are special wrapped objects with unique references.
+            <br>
+            - Use <code>==</code> for loose comparison and <code>===</code> for strict comparison.
+            <br>
+            - Objects are compared by reference, not value.
+        </p>
+    </ol>
+</div>
+<hr>
+
+<!-- Section 2: Working with Numbers -->
+<div class="section">
+    <h2>2. Number Methods</h2>
+    <p>JavaScript provides several methods to work with numbers. Here are some common ones:</p>
+    
+    <h3>2.1. toFixed(n)</h3>
+    <p>Rounds the number to <code>n</code> decimal places and returns it as a string.</p>
+    <div class="example">
+        <pre><code>
+let num = 231.6789;
+console.log(num.toFixed(2));  // Output: "231.68"
+        </code></pre>
+    </div>
+
+    <h3>2.2. toPrecision(n)</h3>
+    <p>Formats the number to <code>n</code> significant digits and returns it as a string.</p>
+    <div class="example">
+        <pre><code>
+console.log(num.toPrecision(3));  // Output: "232"
+        </code></pre>
+    </div>
+
+    <h3>2.3. toExponential(n)</h3>
+    <p>Converts the number to exponential notation with <code>n</code> digits after the decimal point.</p>
+    <div class="example">
+        <pre><code>
+console.log(num.toExponential(2));  // Output: "2.32e+2"
+        </code></pre>
+    </div>
+
+    <h3>2.4. toString()</h3>
+    <p>Converts the number to a string.</p>
+    <div class="example">
+        <pre><code>
+console.log(num.toString());  // Output: "231.6789"
+console.log(typeof num.toString());  // Output: "string"
+        </code></pre>
+    </div>
+
+    <h3>2.5. valueOf()</h3>
+    <p>Returns the primitive value of a <code>Number</code> object.</p>
+    <div class="example">
+        <pre><code>
+let numObject = new Number(42);
+console.log(numObject.valueOf());  // Output: 42
+        </code></pre>
+    </div>
+</div>
+<hr>
+
+<!-- Section 3: The Math Object -->
+<div class="section">
+    <h2>3. The Math Object</h2>
+    <p>The <code>Math</code> object in JavaScript provides a set of built-in methods for performing mathematical tasks such as rounding, generating random numbers, and more.</p>
+
+    <h3>3.1. Mathematical Constants</h3>
+    <ul>
+        <li><code>Math.E</code>: Euler's constant (~2.718).</li>
+        <li><code>Math.PI</code>: The value of Pi (~3.14159).</li>
+        <li><code>Math.LN10</code>: The natural logarithm of 10 (~2.302).</li>
+        <li><code>Math.LOG10E</code>: The logarithm base 10 of Euler's constant (~0.434).</li>
+    </ul>
+
+    <h3>3.2. Random Numbers</h3>
+    <p><code>Math.random()</code> generates a random floating-point number between 0 (inclusive) and 1 (exclusive). To generate random numbers in a specific range, we can scale the result.</p>
+    <div class="example">
+        <pre><code>
+// Generate a random number between 1 and 10
+console.log(Math.floor(Math.random() * 10) + 1);
+
+// Generate a random number between 40 and 50
+console.log(Math.floor(Math.random() * (50 - 40 + 1)) + 40);
+
+// Generate a random number between 1 and 6 (for a dice roll)
+console.log(Math.floor(Math.random() * 6) + 1);
+        </code></pre>
+    </div>
+
+    <h3>3.3. Rounding Methods</h3>
+    <ul>
+        <li><code>Math.floor(x)</code>: Rounds <code>x</code> down to the nearest integer.</li>
+        <li><code>Math.ceil(x)</code>: Rounds <code>x</code> up to the nearest integer.</li>
+        <li><code>Math.round(x)</code>: Rounds <code>x</code> to the nearest integer.</li>
+    </ul>
+    <div class="example">
+        <pre><code>
+let num1 = 29.7;
+console.log(Math.floor(num1));  // Output: 29
+console.log(Math.ceil(num1));   // Output: 30
+console.log(Math.round(num1));  // Output: 30
+        </code></pre>
+    </div>
+
+    <h3>3.4. Absolute Value</h3>
+    <p><code>Math.abs(x)</code> returns the absolute value of a number.</p>
+    <div class="example">
+        <pre><code>
+console.log(Math.abs(-42));  // Output: 42
+console.log(Math.abs(42));   // Output: 42
+        </code></pre>
+    </div>
+    
+    <h3>3.5. Maximum and Minimum</h3>
+    <p><code>Math.max(...values)</code> returns the largest value, while <code>Math.min(...values)</code> returns the smallest value in a list of numbers.</p>
+    <div class="example">
+        <pre><code>
+console.log(Math.max(1, 2, 3, 4, 5));  // Output: 5
+console.log(Math.min(1, 2, 3, 4, 5));  // Output: 1
+        </code></pre>
+    </div>
+</div>
+<hr>
+
+<!-- Section 4: Practical Examples -->
+<div class="section">
+    <h2>4. Practical Examples</h2>
+
+    <h3>4.1. Generating Random Numbers Between Two Values</h3>
+    <p>To generate a random number between two values, <code>min</code> and <code>max</code>, you can use the following formula:</p>
+    <pre><code>
+let min = 40;
+let max = 50;
+console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+    </code></pre>
+
+    <h3>4.2. Simulating a Dice Roll</h3>
+    <p>To simulate a dice roll (numbers between 1 and 6), we can use:</p>
+    <pre><code>
+console.log(Math.floor(Math.random() * 6) + 1);
+    </code></pre>
+
+    <h3>4.3. Converting Degrees to Radians</h3>
+    <p>To convert an angle from degrees to radians, use the formula:</p>
+    <pre><code>
+let degree = 45;
+let radians = degree * Math.PI / 180;
+console.log(radians);  // Output: 0.7853981633974483
+    </code></pre>
+</div>
+
+</body>
+</html>

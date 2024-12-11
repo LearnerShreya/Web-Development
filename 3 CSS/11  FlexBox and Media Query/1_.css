@@ -1,0 +1,43 @@
+
+
+.container{
+    display: flex;
+    background-color: aqua;
+}
+
+
+.box{
+    height: 150px;
+    width: 150px;
+    border: 2px solid black;
+}
+
+/* flex item */
+/* order defines the order of the element */
+/* default order is 0 */
+
+.box1{
+    background-color: red;
+    order: 10;
+    flex-grow: 5;
+    flex-shrink: 3;
+}
+
+.box2{
+    background-color: blue;
+    flex-grow: 1;
+    /* flex-shrink: 15; */
+}
+
+.box3{
+    background-color: green;
+    order: -1;
+    flex-grow: -1;
+    /* flex-shrink: 10; */
+}
+
+.box4{
+    background-color: orange;
+    flex-grow: 3;
+    /* flex-shrink: 10; */
+}

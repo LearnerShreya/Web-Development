@@ -1,0 +1,136 @@
+<!-- Form Attributes Complete Notes -->
+
+<!-- The form element is the container that holds all the inputs and submission details. -->
+<form action="/submit" method="POST">
+    <!-- "action" specifies where the form data will be sent after submission. 
+         If left empty, data is sent to the same page.
+         "method" specifies how the form data will be sent: 
+         - "GET" (default): Appends form data to the URL. 
+         - "POST": Sends the data securely, usually used for sensitive information. -->
+
+    <!-- Name Input Field -->
+    <label for="firstName">Full Name:</label>
+    <!-- "for" links the label to the input field by its id, making it clickable. -->
+    <input type="text" id="firstName" name="firstName" required placeholder="Enter your full name">
+    <!-- "type='text'" means this is a single-line text input. 
+         "id" uniquely identifies this input on the page.
+         "name" is used to identify this field in the form data. 
+         "required" makes it mandatory to fill this field before submission.
+         "placeholder" gives a helpful hint inside the input box, disappearing when the user types. -->
+    <br><br>
+
+    <!-- Email Input Field -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <!-- "type='email'" ensures that only a valid email address can be entered.
+         "required" makes sure this field must be filled out before submitting. -->
+    <br><br>
+
+    <!-- Phone Number Input Field -->
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+    <!-- "type='tel'" is specifically for phone numbers and can accept only digits.
+         "placeholder" gives a hint inside the field. -->
+    <br><br>
+
+    <!-- Age Input Field -->
+    <label>Age:</label>
+    <input type="number" name="age" min="0" max="100">
+    <!-- "type='number'" ensures only numeric values can be entered.
+         "min" and "max" restrict the range of acceptable input values (0 to 100). -->
+    <br><br>
+
+    <!-- Password Input Field -->
+    <label for="pass">Password:</label>
+    <input type="password" id="pass" name="password">
+    <!-- "type='password'" hides the input as dots or asterisks.
+         "name" will be used to send the password data securely in the form. -->
+    <br><br>
+
+    <!-- Gender Selection (Radio Buttons) -->
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="Other">
+    <label for="other">Other</label>
+    <!-- "type='radio'" allows the user to choose one option out of multiple.
+         Each radio button has the same "name", which groups them together.
+         The "value" attribute specifies the value sent when selected. -->
+    <br><br>
+
+    <!-- Terms and Conditions (Checkbox) -->
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">I agree to the terms and conditions</label>
+    <!-- "type='checkbox'" creates a box that the user can check.
+         "required" makes sure this checkbox must be checked before form submission. -->
+    <br><br>
+
+    <!-- Text Area for Messages -->
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" cols="50" placeholder="Write your message here"></textarea>
+    <!-- "textarea" is used for multi-line text input.
+         "rows" and "cols" define the size of the text box. -->
+    <br><br>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+    <!-- "type='submit'" makes the button submit the form when clicked.
+         The form data is then sent to the location specified in the "action" attribute. -->
+</form>
+
+<!-- Hyperlink for Additional Resources -->
+<a href="https://docs.emmet.io/cheat-sheet/">Emmet Cheat Sheet</a>
+<!-- "a" is an anchor element used for creating hyperlinks.
+     "href" specifies the URL or link destination. -->
+
+<!-- Example of Using Classes and IDs -->
+<p class="first">This is a paragraph with a class called "first".</p>
+<p id="second">This is a paragraph with an ID called "second".</p>
+<header class="first second third" id="header">This header has multiple classes and an ID.</header>
+<!-- "class" is used to apply styles to multiple elements. 
+     Multiple classes can be added by separating them with a space.
+     "id" uniquely identifies an element, allowing for individual styling or scripting. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+     <lablel></lablel>
+     <input> <br><br>
+
+     <form action="">
+       <!-- "action" attribute is used to specify where the form data should be sent after submission. 
+            If it's empty (""), the form will be submitted to the current page. -->
+   
+       <label for="first">Name:</label>
+       <!-- "for" links the label to the input field with the matching "id".
+            This makes it so when the user clicks on the label, the associated input field is selected. -->
+   
+       <input type="text" id="first" required name="fname" placeholder="Enter your name"> <br> <br>
+       <!-- "type" defines the kind of input field (text here). 
+            "id" gives a unique identifier to the input field (useful for linking with labels).
+            "required" makes sure the field must be filled before submitting the form.
+            "name" gives the field a name to identify it when the form is submitted.
+            "placeholder" shows a hint inside the field (disappears when the user starts typing). -->
+   
+       <label>Age:</label>
+       <input type="number" name="age" min="0" max="100"> <br> <br>
+       <!-- "type" is set to number, which ensures only numbers can be entered.
+            "name" gives the field a name for identifying this input when the form is submitted.
+            "min" and "max" define the range of valid input values (0 to 100). -->
+   
+       <button>Submit</button>
+       <!-- "button" is used to create a clickable button, which in this case submits the form. -->
+   </form>
+   

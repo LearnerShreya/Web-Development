@@ -1,0 +1,15 @@
+
+
+h1{
+    font-size: 8vh;
+    font-weight: 900;
+    font-style: oblique;
+    font-variant:small-caps;
+    text-transform: lowercase;
+}
+
+p{
+    line-height: 30px;
+    letter-spacing:2px;
+    word-spacing: 2px;
+}

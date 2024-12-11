@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Date Object Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background-color: #f9f9f9;
+            padding: 3px 6px;
+            border-radius: 4px;
+            color: #d63384;
+            font-size: 1rem;
+        }
+        section {
+            margin-bottom: 25px;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comprehensive JavaScript Date Object Notes</h1>
+    
+    <section>
+        <h2>Creating Dates</h2>
+        <p>The <code>Date</code> object in JavaScript allows you to work with dates and times. Here are various ways to create a <code>Date</code> object:</p>
+        <ul>
+            <li><strong>Current Date and Time:</strong>
+                <pre><code>const now = new Date();</code></pre>
+                Retrieves the current date and time.
+            </li>
+            <li><strong>Specific Date:</strong>
+                <pre><code>const specificDate = new Date(2024, 10, 29);</code></pre>
+                Creates a date object for November 29, 2024 (months are 0-indexed, so 10 = November).
+            </li>
+            <li><strong>Date from String:</strong>
+                <pre><code>const dateFromString = new Date("2024-11-29");</code></pre>
+                Parses a date string and creates the corresponding date object.
+            </li>
+            <li><strong>Using Timestamps:</strong>
+                <pre><code>const fromTimestamp = new Date(1732845690000);</code></pre>
+                Creates a date object from a timestamp in milliseconds since January 1, 1970 (Unix Epoch).
+            </li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Accessing Date & Time Components</h2>
+        <p>The <code>Date</code> object provides methods to access individual components of the date and time:</p>
+        <ul>
+            <li><strong>Year:</strong> <code>now.getFullYear();</code> – Returns the year (e.g., 2024).</li>
+            <li><strong>Month:</strong> <code>now.getMonth();</code> – Returns the month (0-11, where 0 = January).</li>
+            <li><strong>Day of the Month:</strong> <code>now.getDate();</code> – Returns the day of the month (1-31).</li>
+            <li><strong>Day of the Week:</strong> <code>now.getDay();</code> – Returns the day of the week (0-6, where 0 = Sunday).</li>
+            <li><strong>Hour:</strong> <code>now.getHours();</code> – Returns the hour (0-23).</li>
+            <li><strong>Minutes:</strong> <code>now.getMinutes();</code> – Returns the minutes (0-59).</li>
+            <li><strong>Seconds:</strong> <code>now.getSeconds();</code> – Returns the seconds (0-59).</li>
+            <li><strong>Milliseconds:</strong> <code>now.getMilliseconds();</code> – Returns the milliseconds (0-999).</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Setting Date Components</h2>
+        <p>You can modify the components of an existing date using the <code>set</code> methods:</p>
+        <ul>
+            <li><strong>Set Year:</strong> <code>date.setFullYear(2030);</code> – Updates the year.</li>
+            <li><strong>Set Month:</strong> <code>date.setMonth(5);</code> – Updates the month to June (5 = June).</li>
+            <li><strong>Set Day:</strong> <code>date.setDate(15);</code> – Updates the day of the month to 15.</li>
+            <li><strong>Set Hour:</strong> <code>date.setHours(10);</code> – Updates the hour to 10 AM.</li>
+            <li><strong>Set Minutes:</strong> <code>date.setMinutes(45);</code> – Updates the minutes to 45.</li>
+            <li><strong>Set Seconds:</strong> <code>date.setSeconds(30);</code> – Updates the seconds to 30.</li>
+        </ul>
+        <p>Example:</p>
+        <pre><code>
+const date = new Date();
+date.setFullYear(2030);
+console.log(date); // Updated date
+        </code></pre>
+    </section>
+    
+    <section>
+        <h2>Formatting Dates</h2>
+        <p>The <code>Date</code> object offers various methods to format dates:</p>
+        <ul>
+            <li><strong>Full String:</strong> <code>date.toString();</code> – e.g., <em>Fri Nov 29 2024 10:30:00 GMT+0530 (India Standard Time)</em></li>
+            <li><strong>ISO Format:</strong> <code>date.toISOString();</code> – e.g., <em>2024-11-29T05:00:00.000Z</em></li>
+            <li><strong>UTC Format:</strong> <code>date.toUTCString();</code> – e.g., <em>Fri, 29 Nov 2024 05:00:00 GMT</em></li>
+            <li><strong>Locale Date:</strong> <code>date.toLocaleDateString();</code> – e.g., <em>11/29/2024</em></li>
+            <li><strong>Locale Time:</strong> <code>date.toLocaleTimeString();</code> – e.g., <em>10:30:00 AM</em></li>
+            <li><strong>Locale Date & Time:</strong> <code>date.toLocaleString();</code> – e.g., <em>11/29/2024, 10:30:00 AM</em></li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Date Calculations</h2>
+        <p>You can perform arithmetic operations on dates:</p>
+        <ul>
+            <li><strong>Difference Between Dates:</strong></li>
+            <pre><code>
+const date1 = new Date("2024-11-01");
+const date2 = new Date("2024-11-29");
+const difference = date2 - date1; // Difference in milliseconds
+console.log(difference / (1000 * 60 * 60 * 24)); // Days difference
+            </code></pre>
+            <li><strong>Add Days to a Date:</strong></li>
+            <pre><code>
+const date = new Date();
+date.setDate(date.getDate() + 7); // Adds 7 days
+console.log(date); // Updated date
+            </code></pre>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>Created for JavaScript learners to master the <code>Date</code> object.</p>
+    </footer>
+</body>
+</html>

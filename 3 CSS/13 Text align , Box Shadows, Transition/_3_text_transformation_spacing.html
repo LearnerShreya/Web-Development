@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Transformation and Spacing Guide</title>
+    <style>
+        /* Basic styles */
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .example { border: 1px solid #ccc; padding: 10px; margin: 10px 0; background-color: #f9f9f9; }
+        .section-title { font-size: 1.2em; font-weight: bold; color: #333; margin-top: 20px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>Text Transformation and Spacing in CSS</h1>
+    <p>This document explains the various CSS properties related to text transformation and spacing, with examples and visual output.</p>
+
+    <!-- 1. text-transform -->
+    <div class="section-title">1. text-transform</div>
+    <p>The <code>text-transform</code> property controls the capitalization of text. Possible values include:</p>
+    <ul>
+        <li><strong>uppercase</strong>: Transforms all letters to uppercase.</li>
+        <li><strong>lowercase</strong>: Transforms all letters to lowercase.</li>
+        <li><strong>capitalize</strong>: Capitalizes the first letter of each word.</li>
+    </ul>
+
+    <div class="example">
+        <p style="text-transform: uppercase;">This text is in uppercase.</p>
+        <p style="text-transform: lowercase;">This TEXT is in lowercase.</p>
+        <p style="text-transform: capitalize;">this text is capitalized.</p>
+    </div>
+    <pre>
+    /* Code Example */
+    p {
+        text-transform: uppercase; /* Or lowercase, capitalize */
+    }
+    </pre>
+    <p><strong>Summary:</strong> The <code>text-transform</code> property modifies the case of text, making it uppercase, lowercase, or capitalized for readability or stylistic purposes.</p>
+
+    <!-- 2. text-indent -->
+    <div class="section-title">2. text-indent</div>
+    <p>The <code>text-indent</code> property specifies the indentation of the first line in a block of text. It is typically used to create a space at the start of a paragraph.</p>
+
+    <div class="example">
+        <p style="text-indent: 30px;">This paragraph has a 30px text indent at the beginning.</p>
+    </div>
+    <pre>
+    /* Code Example */
+    p {
+        text-indent: 30px;
+    }
+    </pre>
+    <p><strong>Summary:</strong> The <code>text-indent</code> property allows you to control the indentation of the first line in a paragraph, enhancing readability.</p>
+
+    <!-- 3. letter-spacing -->
+    <div class="section-title">3. letter-spacing</div>
+    <p>The <code>letter-spacing</code> property sets the space between characters in a text. It can be used to adjust the density of text, making it more readable or stylized.</p>
+
+    <div class="example">
+        <p style="letter-spacing: 2px;">This text has a letter spacing of 2px.</p>
+        <p style="letter-spacing: -1px;">This text has a letter spacing of -1px (condensed).</p>
+    </div>
+    <pre>
+    /* Code Example */
+    p {
+        letter-spacing: 2px; /* Can be any positive or negative value */
+    }
+    </pre>
+    <p><strong>Summary:</strong> The <code>letter-spacing</code> property adjusts the spacing between characters in text, improving readability or fitting a specific design style.</p>
+
+    <!-- 4. line-height -->
+    <div class="section-title">4. line-height</div>
+    <p>The <code>line-height</code> property sets the space between lines of text, known as line spacing. It is crucial for text readability and layout.</p>
+
+    <div class="example">
+        <p style="line-height: 1.2;">This paragraph has a line height of 1.2.</p>
+        <p style="line-height: 2;">This paragraph has a line height of 2.</p>
+    </div>
+    <pre>
+    /* Code Example */
+    p {
+        line-height: 1.5; /* Any unitless number, %, px, or em */
+    }
+    </pre>
+    <p><strong>Summary:</strong> The <code>line-height</code> property controls the vertical spacing between lines, improving readability and overall aesthetics.</p>
+
+    <!-- 5. word-spacing -->
+    <div class="section-title">5. word-spacing</div>
+    <p>The <code>word-spacing</code> property sets the space between words. It helps to control word density and readability.</p>
+
+    <div class="example">
+        <p style="word-spacing: 5px;">This paragraph has 5px word spacing.</p>
+        <p style="word-spacing: -2px;">This paragraph has -2px word spacing (condensed).</p>
+    </div>
+    <pre>
+    /* Code Example */
+    p {
+        word-spacing: 5px; /* Can be any positive or negative value */
+    }
+    </pre>
+    <p><strong>Summary:</strong> The <code>word-spacing</code> property allows control over the space between words, affecting the text's flow and readability.</p>
+
+    <!-- 6. white-space -->
+    <div class="section-title">6. white-space</div>
+    <p>The <code>white-space</code> property controls how white space inside an element is handled. Possible values include:</p>
+    <ul>
+        <li><strong>normal</strong>: Collapses white space, and text wraps to fill lines.</li>
+        <li><strong>nowrap</strong>: Collapses white space, but text does not wrap.</li>
+        <li><strong>pre</strong>: Preserves white space and line breaks as in the original text.</li>
+        <li><strong>pre-wrap</strong>: Preserves white space and wraps text when necessary.</li>
+        <li><strong>pre-line</strong>: Collapses multiple white spaces, preserving line breaks.</li>
+    </ul>
+
+    <div class="example">
+        <p style="white-space: nowrap;">This paragraph does not wrap to the next line, even if it goes beyond the container width.</p>
+        <p style="white-space: pre;">This paragraph    preserves    all      white    space    and line breaks.</p>
+    </div>
+    <pre>
+    /* Code Example */
+    p {
+        white-space: nowrap; /* Or normal, pre, pre-wrap, pre-line */
+    }
+    </pre>
+    <p><strong>Summary:</strong> The <code>white-space</code> property dictates how white space and line breaks are handled, preserving or collapsing them based on the needs of the design.</p>
+
+    <!-- Summary of All Properties -->
+    <h2>Summary of Text Transformation and Spacing Properties</h2>
+    <ul>
+        <li><strong>Text Transformation (<code>text-transform</code>):</strong> Controls the case of text, converting it to uppercase, lowercase, or capitalized.</li>
+        <li><strong>Text Indentation (<code>text-indent</code>):</strong> Sets the indentation for the first line of text in a block, often used to style paragraphs.</li>
+        <li><strong>Letter Spacing (<code>letter-spacing</code>):</strong> Adjusts the space between individual characters, affecting the visual density of text.</li>
+        <li><strong>Line Height (<code>line-height</code>):</strong> Sets the vertical space between lines, which impacts readability.</li>
+        <li><strong>Word Spacing (<code>word-spacing</code>):</strong> Adjusts the space between words, which can improve text flow and readability.</li>
+        <li><strong>White Space (<code>white-space</code>):</strong> Determines how white space within text is handled, including wrapping and preservation of spaces and line breaks.</li>
+    </ul>
+
+</body>
+</html>

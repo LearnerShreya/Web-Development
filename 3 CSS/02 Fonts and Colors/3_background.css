@@ -1,0 +1,12 @@
+
+body{
+
+    background-color: rgb(228, 212, 190);
+}
+
+body{
+    background-image: url(./image.png);
+    background-size: cover;
+    /* background-size: 100%; */
+    background-repeat: no-repeat;
+}

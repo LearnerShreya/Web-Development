@@ -1,0 +1,321 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding CSS Clear Property</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .container {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px dashed #ccc;
+            background-color: #f9f9f9;
+        }
+        .box {
+            width: 150px;
+            height: 100px;
+            margin: 5px;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+        }
+        .left-float {
+            float: left;
+            background-color: #4CAF50;
+            border: 2px solid #2e7d32;
+        }
+        .right-float {
+            float: right;
+            background-color: #FF9800;
+            border: 2px solid #ef6c00;
+        }
+        .clear {
+            clear: both;
+            background-color: #2196F3;
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid #0d47a1;
+            text-align: center;
+        }
+        .note {
+            color: #555;
+            font-size: 0.9em;
+            margin-top: 10px;
+            padding: 10px;
+            border-left: 4px solid #2196F3;
+            background-color: #e3f2fd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Understanding the CSS Clear Property</h1>
+    
+    <section>
+        <h2>Introduction</h2>
+        <p>The <strong>clear</strong> property in CSS is used to control the position of an element relative to floated elements above it. By using <code>clear</code>, you can ensure that an element does not wrap around any floated elements, making layouts predictable and easier to control.</p>
+    </section>
+    
+    <section>
+        <h2>Clear Property Values</h2>
+        <ul>
+            <li><strong>none</strong>: Default value; the element is not affected by any floats.</li>
+            <li><strong>left</strong>: Moves the element below left-floated elements.</li>
+            <li><strong>right</strong>: Moves the element below right-floated elements.</li>
+            <li><strong>both</strong>: Moves the element below both left and right floated elements.</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Example: Before Adding Clear</h2>
+        <div class="container">
+            <p>This example shows elements with <strong>left</strong> and <strong>right floats</strong> without using the <code>clear</code> property. Notice that the next element wraps around them.</p>
+            <div class="box left-float">Left Float Box</div>
+            <div class="box right-float">Right Float Box</div>
+            <div class="box" style="background-color: #f44336; border: 2px solid #c62828;">Content Without Clear</div>
+            <p class="note">Notice how the "Content Without Clear" box wraps around the floated boxes above.</p>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Example: After Adding Clear</h2>
+        <div class="container">
+            <p>This example uses <code>clear: both</code> to move the "Clear Both Box" below the floated elements.</p>
+            <div class="box left-float">Left Float Box</div>
+            <div class="box right-float">Right Float Box</div>
+            <div class="clear">Clear Both Box (Clear: Both)</div>
+            <div class="box" style="background-color: #f44336; border: 2px solid #c62828;">Content Below Cleared Element</div>
+            <p class="note">With <code>clear: both</code>, the "Clear Both Box" and content below it are moved beneath the floated elements.</p>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Using Specific Clear Values</h2>
+
+        <h3>Clear Left</h3>
+        <div class="container">
+            <p>Here, only the left float is cleared, so the "Clear Left Box" sits below the left-floated element only.</p>
+            <div class="box left-float">Left Float Box</div>
+            <div class="clear" style="clear: left;">Clear Left Box (Clear: Left)</div>
+            <div class="box" style="background-color: #f44336; border: 2px solid #c62828;">Content Below Left Clear</div>
+            <p class="note">Only the left float is cleared, so the content sits next to any right-floated elements.</p>
+        </div>
+        
+        <h3>Clear Right</h3>
+        <div class="container">
+            <p>Here, only the right float is cleared, so the "Clear Right Box" sits below the right-floated element only.</p>
+            <div class="box right-float">Right Float Box</div>
+            <div class="clear" style="clear: right;">Clear Right Box (Clear: Right)</div>
+            <div class="box" style="background-color: #f44336; border: 2px solid #c62828;">Content Below Right Clear</div>
+            <p class="note">Only the right float is cleared, so the content sits next to any left-floated elements.</p>
+        </div>
+        
+        <h3>Clear Both</h3>
+        <div class="container">
+            <p>This example clears both floats, pushing the "Clear Both Box" below both floated elements.</p>
+            <div class="box left-float">Left Float Box</div>
+            <div class="box right-float">Right Float Box</div>
+            <div class="clear" style="clear: both;">Clear Both Box (Clear: Both)</div>
+            <div class="box" style="background-color: #f44336; border: 2px solid #c62828;">Content Below Both Clears</div>
+            <p class="note">With <code>clear: both</code>, the "Clear Both Box" and content below it appear under all floated elements.</p>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Key Points</h2>
+        <ul>
+            <li>Use the <code>clear</code> property to prevent wrapping around floated elements.</li>
+            <li>For left floats, use <code>clear: left</code>, for right floats, use <code>clear: right</code>.</li>
+            <li>To clear both, use <code>clear: both</code>, which is useful to reset all floats in a section.</li>
+        </ul>
+    </section>
+</body>
+</html> -->
+<br>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding CSS Clear Property</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .container {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px dashed #ccc;
+            background-color: #f9f9f9;
+        }
+        .box {
+            width: 150px;
+            height: 100px;
+            margin: 5px;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+        }
+        .left-float {
+            float: left;
+            background-color: #4CAF50;
+            border: 2px solid #2e7d32;
+        }
+        .right-float {
+            float: right;
+            background-color: #FF9800;
+            border: 2px solid #ef6c00;
+        }
+        .clear {
+            clear: both;
+            background-color: #2196F3;
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid #0d47a1;
+            text-align: center;
+        }
+        .note {
+            color: #555;
+            font-size: 0.9em;
+            margin-top: 10px;
+            padding: 10px;
+            border-left: 4px solid #2196F3;
+            background-color: #e3f2fd;
+        }
+        .code-box {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: monospace;
+            color: #333;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <h1>Understanding the CSS Clear Property</h1>
+    
+    <section>
+        <h2>Introduction</h2>
+        <p>The <strong>clear</strong> property in CSS is used to control the position of an element relative to floated elements above it. By using <code>clear</code>, you can ensure that an element does not wrap around any floated elements, making layouts predictable and easier to control.</p>
+    </section>
+    
+    <section>
+        <h2>Clear Property Values</h2>
+        <ul>
+            <li><strong>none</strong>: Default value; the element is not affected by any floats.</li>
+            <li><strong>left</strong>: Moves the element below left-floated elements.</li>
+            <li><strong>right</strong>: Moves the element below right-floated elements.</li>
+            <li><strong>both</strong>: Moves the element below both left and right floated elements.</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Example: Before Adding Clear</h2>
+        <div class="container">
+            <p>This example shows elements with <strong>left</strong> and <strong>right floats</strong> without using the <code>clear</code> property. Notice that the next element wraps around them.</p>
+            <div class="box left-float">Left Float Box</div>
+            <div class="box right-float">Right Float Box</div>
+            <div class="box" style="background-color: #f44336; border: 2px solid #c62828;">Content Without Clear</div>
+            <p class="note">Notice how the "Content Without Clear" box wraps around the floated boxes above.</p>
+            <div class="code-box">
+                /* CSS Code for Example: Before Adding Clear */
+                .left-float { float: left; }
+                .right-float { float: right; }
+                .box { width: 150px; height: 100px; }
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Example: After Adding Clear</h2>
+        <div class="container">
+            <p>This example uses <code>clear: both</code> to move the "Clear Both Box" below the floated elements.</p>
+            <div class="box left-float">Left Float Box</div>
+            <div class="box right-float">Right Float Box</div>
+            <div class="clear">Clear Both Box (Clear: Both)</div>
+            <div class="box" style="background-color: #f44336; border: 2px solid #c62828;">Content Below Cleared Element</div>
+            <p class="note">With <code>clear: both</code>, the "Clear Both Box" and content below it are moved beneath the floated elements.</p>
+            <div class="code-box">
+                /* CSS Code for Example: After Adding Clear */
+                .left-float { float: left; }
+                .right-float { float: right; }
+                .clear { clear: both; }
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Using Specific Clear Values</h2>
+
+        <h3>Clear Left</h3>
+        <div class="container">
+            <p>Here, only the left float is cleared, so the "Clear Left Box" sits below the left-floated element only.</p>
+            <div class="box left-float">Left Float Box</div>
+            <div class="clear" style="clear: left;">Clear Left Box (Clear: Left)</div>
+            <div class="box" style="background-color: #f44336; border: 2px solid #c62828;">Content Below Left Clear</div>
+            <p class="note">Only the left float is cleared, so the content sits next to any right-floated elements.</p>
+            <div class="code-box">
+                /* CSS Code for Clear Left */
+                .left-float { float: left; }
+                .clear { clear: left; }
+            </div>
+        </div>
+        
+        <h3>Clear Right</h3>
+        <div class="container">
+            <p>Here, only the right float is cleared, so the "Clear Right Box" sits below the right-floated element only.</p>
+            <div class="box right-float">Right Float Box</div>
+            <div class="clear" style="clear: right;">Clear Right Box (Clear: Right)</div>
+            <div class="box" style="background-color: #f44336; border: 2px solid #c62828;">Content Below Right Clear</div>
+            <p class="note">Only the right float is cleared, so the content sits next to any left-floated elements.</p>
+            <div class="code-box">
+                /* CSS Code for Clear Right */
+                .right-float { float: right; }
+                .clear { clear: right; }
+            </div>
+        </div>
+        
+        <h3>Clear Both</h3>
+        <div class="container">
+            <p>This example clears both floats, pushing the "Clear Both Box" below both floated elements.</p>
+            <div class="box left-float">Left Float Box</div>
+            <div class="box right-float">Right Float Box</div>
+            <div class="clear" style="clear: both;">Clear Both Box (Clear: Both)</div>
+            <div class="box" style="background-color: #f44336; border: 2px solid #c62828;">Content Below Both Clears</div>
+            <p class="note">With <code>clear: both</code>, the "Clear Both Box" and content below it appear under all floated elements.</p>
+            <div class="code-box">
+                /* CSS Code for Clear Both */
+                .left-float { float: left; }
+                .right-float { float: right; }
+                .clear { clear: both; }
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Key Points</h2>
+        <ul>
+            <li>Use the <code>clear</code> property to prevent wrapping around floated elements.</li>
+            <li>For left floats, use <code>clear: left</code>, for right floats, use <code>clear: right</code>.</li>
+            <li>To clear both, use <code>clear: both</code>, which is useful to reset all floats in a section.</li>
+        </ul>
+    </section>
+</body>
+</html>
