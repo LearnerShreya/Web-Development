@@ -1,0 +1,20 @@
+
+
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #002244, #335580, #dce4ee);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+      
+
+h1{
+    font-size: 50px;
+}
+
+div{
+    padding: 50px;
+}

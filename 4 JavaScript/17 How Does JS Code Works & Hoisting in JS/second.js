@@ -1,10 +1,10 @@
 
 // greet();
 
-// function greet(){
-//     console.log("Hello World");
-// }
-
+function greet(){
+    console.log("Hello World");
+}
+greet();
 
 //  
 // Memory alloocatioN
@@ -14,19 +14,15 @@
 
 
 
-
+// meet();
 
 var meet = function(){
     console.log("Hello Meet");
 }
-
 meet();
-
-// 
 
 
 var x;
-
 console.log(x);
 x = 10;
 
