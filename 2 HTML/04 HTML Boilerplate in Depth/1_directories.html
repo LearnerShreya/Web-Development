@@ -1,0 +1,84 @@
+<h2>Brief Description of Root Directory and Directories</h2>
+
+<h3>Root Directory</h3>
+<p>
+    The root directory is the top-level directory in a file system. It serves as the starting point from which all other directories branch out. For example, in a Windows system, the root directory for the C: drive is represented as <code>C:\</code>. This directory may contain subdirectories such as <strong>Documents</strong>, <strong>Program Files</strong>, and <strong>Users</strong>.
+</p>
+
+<h3>Directories</h3>
+<p>
+    A directory is a container that holds files and other directories. They help organize files in a hierarchical manner. For example, within the root directory, you might have a directory structure like this:
+</p>
+
+<pre>
+C:\
+├── Users
+│   ├── Neha
+│   └── Gaurav
+├── Program Files
+└── Windows
+</pre>
+
+<p>
+    In this structure, <strong>Users</strong>, <strong>Program Files</strong>, and <strong>Windows</strong> are all directories contained within the root directory, helping to keep the file system organized and manageable.
+</p> <hr>
+
+
+<p><strong style="color: rgb(222, 36, 36);">Note:</strong></p>
+<p>In VS Code, you can access any file within the folder or project that you have opened. However, if you specify the path to an image or file located outside of the open project folder, VS Code won’t be able to display it in your program or console.</p>
+
+<p><strong>Example:</strong></p>
+<ul>
+    <li>If you include an image path in your code that points to a file located outside the project folder currently open in VS Code, that image won’t display when you run the code.</li>
+    <li>This is because the file isn’t part of the active workspace in VS Code, and relative paths are limited to the opened folder’s directory structure.</li>
+</ul>
+
+<p>To avoid this issue, ensure that any images or files you reference are within the opened project folder.</p>
+
+<hr>
+
+
+
+<h2>Note: Why We Don't Allow Access from the Root Directory</h2>
+
+<p>The root directory is the highest level in a file system hierarchy. It contains all other directories and files. Accessing files directly from the root directory can pose several risks and challenges:</p>
+
+<ul>
+    <li><strong>Security Concerns:</strong>
+        <ul>
+            <li><em>Vulnerability to Attacks:</em> Allowing access to sensitive files can lead to data breaches if unauthorized users exploit them.</li>
+            <li><em>Risk of File Manipulation:</em> Users may modify critical system files, leading to system instability or failures.</li>
+        </ul>
+    </li>
+    <li><strong>User Permissions:</strong>
+        <ul>
+            <li><em>Limited Access Control:</em> Users might gain more access than necessary, which can be risky.</li>
+            <li><em>Difficulties in Auditing:</em> Monitoring changes to important files becomes more challenging, making it hard to track unauthorized access.</li>
+        </ul>
+    </li>
+    <li><strong>File Organization:</strong>
+        <ul>
+            <li><em>Clutter and Confusion:</em> Allowing root access can lead to a messy file structure that users find hard to navigate.</li>
+            <li><em>Namespace Conflicts:</em> Different files may have the same name, leading to errors when referencing them.</li>
+        </ul>
+    </li>
+    <li><strong>Separation of Concerns:</strong>
+        <ul>
+            <li><em>Encapsulation:</em> Keeping files organized within specific directories promotes a clearer file structure.</li>
+            <li><em>Easier Maintenance:</em> Changes to one area can be made without affecting unrelated files, simplifying updates.</li>
+        </ul>
+    </li>
+    <li><strong>Best Practices:</strong>
+        <ul>
+            <li><em>Industry Standards:</em> Limiting access to necessary directories is a widely accepted security practice.</li>
+            <li><em>Compliance:</em> This approach helps adhere to regulations regarding the protection of sensitive information.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>Conclusion</h3>
+<p>For these reasons, it's important to limit access to specific directories that are essential for user tasks. This practice enhances security and improves overall system organization.</p>
+<hr>
+
+
+
