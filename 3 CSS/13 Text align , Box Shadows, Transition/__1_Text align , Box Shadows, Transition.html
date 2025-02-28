@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Styling Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+      border-bottom: 2px solid #f4f4f4;
+      padding-bottom: 10px;
+    }
+    h2 {
+      margin-top: 1em;
+      color: #007bff;
+    }
+    .example {
+      background-color: #f4f4f4;
+      padding: 10px;
+      margin: 10px 0;
+      border-left: 4px solid #007bff;
+      font-family: monospace;
+    }
+    .highlight {
+      color: #d9534f;
+    }
+    .visual {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    .shadow-example { 
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+    }
+    .transition-example {
+      background-color: #007bff;
+      transition: background-color 1s ease;
+    }
+    .transition-example:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<h1>CSS Styling Notes</h1>
+
+<h2>Text Alignment and Direction</h2>
+<p>
+  Use the <code>text-align</code> property to control text alignment, while <code>direction</code> and <code>unicode-bidi</code> manage text direction.
+</p>
+
+<ul>
+  <li><code>text-align</code>: <span class="highlight">left, right, center, justify</span></li>
+  <li><code>direction</code>: <span class="highlight">ltr, rtl</span></li>
+  <li><code>unicode-bidi</code>: <span class="highlight">bidi-override</span></li>
+</ul>
+
+<div class="example">
+  Example:<br>
+  <code>text-align: center;</code><br>
+  <code>direction: rtl;</code>
+</div>
+
+<h2>Text Decoration</h2>
+<p>
+  <code>text-decoration</code> properties allow you to style underlines, overlines, and strikethroughs.
+</p>
+
+<ul>
+  <li><code>text-decoration-line</code>: <span class="highlight">overline, line-through, underline</span></li>
+  <li><code>text-decoration-color</code>: <span class="highlight">color</span></li>
+  <li><code>text-decoration-style</code>: <span class="highlight">solid, dashed, dotted</span></li>
+</ul>
+
+<div class="example">
+  Example:<br>
+  <code>text-decoration-line: underline;</code><br>
+  <code>text-decoration-color: red;</code>
+</div>
+
+<h2>Text Transformation</h2>
+<p>Use <code>text-transform</code> to change text to uppercase, lowercase, or capitalize each word.</p>
+<ul>
+  <li><code>uppercase</code>: Converts text to uppercase</li>
+  <li><code>lowercase</code>: Converts text to lowercase</li>
+  <li><code>capitalize</code>: Capitalizes the first letter of each word</li>
+</ul>
+
+<div class="example">
+  Example:<br>
+  <code>text-transform: uppercase;</code>
+</div>
+
+<h2>Text Spacing</h2>
+<p>Properties for adjusting spacing within and between text elements:</p>
+<ul>
+  <li><code>text-indent</code>: Indents the first line of a paragraph.</li>
+  <li><code>letter-spacing</code>: Adds space between letters.</li>
+  <li><code>line-height</code>: Adjusts line spacing.</li>
+  <li><code>word-spacing</code>: Adds space between words.</li>
+  <li><code>white-space</code>: Controls how white space is handled.</li>
+</ul>
+
+<div class="example">
+  Example:<br>
+  <code>line-height: 1.5;</code><br>
+  <code>word-spacing: 0.2em;</code>
+</div>
+
+<h2>Text Shadow</h2>
+<p>Apply shadows to text using the <code>text-shadow</code> property. It includes horizontal offset, vertical offset, blur radius, and color.</p>
+<div class="example">
+  Example:<br>
+  <code>text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);</code>
+</div>
+
+<h2>Box Shadow</h2>
+<p>
+  The <code>box-shadow</code> property adds shadow effects around an element's frame.
+</p>
+<ul>
+  <li><span class="highlight">h-offset</span>: Moves shadow horizontally</li>
+  <li><span class="highlight">v-offset</span>: Moves shadow vertically</li>
+  <li><span class="highlight">blur-radius</span>: Amount of blur</li>
+  <li><span class="highlight">spread-radius</span>: Expands or contracts the shadow</li>
+  <li><span class="highlight">color</span>: Shadow color</li>
+</ul>
+
+<div class="example">
+  Example:<br>
+  <code>box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);</code>
+</div>
+
+<div class="visual">
+  <div class="box shadow-example" style="background-color: #007bff;">Shadow</div>
+</div>
+
+<h2>Transition</h2>
+<p>Animate property changes smoothly with the <code>transition</code> property.</p>
+<ul>
+  <li><span class="highlight">property</span>: Specifies the property to animate</li>
+  <li><span class="highlight">duration</span>: Time to complete transition</li>
+  <li><span class="highlight">timing-function</span>: Speed curve (e.g., ease, linear)</li>
+  <li><span class="highlight">delay</span>: Delay before the transition starts</li>
+</ul>
+
+<div class="example">
+  Example:<br>
+  <code>transition: background-color 1s ease;</code>
+</div>
+
+<div class="visual">
+  <div class="box transition-example">Hover Me</div>
+</div>
+
+</body>
+</html>

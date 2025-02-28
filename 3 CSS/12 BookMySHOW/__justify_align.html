@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between justify-content and align-items</title>
+    <style>
+
+        *{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+
+        .container {
+            display: flex;
+            justify-content: center; /* Centers items horizontally */
+            align-items: center;     /* Centers items vertically */
+            height: 200px;
+            border: 1px solid black;
+            background-color: #f0f0f0;
+        }
+        .item {
+            width: 50px;
+            height: 50px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Difference Between <code>justify-content: center;</code> and <code>align-items: center;</code></h1>
+    <p>The <code>justify-content</code> and <code>align-items</code> properties are used in CSS Flexbox and Grid layouts for aligning items, but each aligns elements along a different axis:</p>
+
+    <h2>1. <code>justify-content: center;</code></h2>
+    <ul>
+        <li>Aligns items <strong>horizontally</strong> along the <strong>main axis</strong>.</li>
+        <li>By default, the main axis is horizontal (left to right) when <code>flex-direction</code> is <code>row</code>.</li>
+        <li>Setting <code>justify-content: center;</code> centers items horizontally in the container.</li>
+    </ul>
+
+    <h2>2. <code>align-items: center;</code></h2>
+    <ul>
+        <li>Aligns items <strong>vertically</strong> along the <strong>cross axis</strong>, which is perpendicular to the main axis.</li>
+        <li>When <code>flex-direction</code> is <code>row</code>, the cross axis is vertical (top to bottom).</li>
+        <li>Setting <code>align-items: center;</code> centers items vertically in the container.</li>
+    </ul>
+
+    <h2>Example in a Flexbox Container</h2>
+    <p>In the following example, items are centered both horizontally and vertically within the container using <code>justify-content: center;</code> and <code>align-items: center;</code> together:</p>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+    </div>
+
+    <pre>
+<code>
+.container {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;     /* Centers items vertically */
+    height: 200px;
+    border: 1px solid black;
+}
+.item {
+    width: 50px;
+    height: 50px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 50px;
+}
+</code>
+    </pre>
+
+    <h2>Visual Summary</h2>
+    <ul>
+        <li><strong>Horizontal Alignment (<code>justify-content</code>)</strong>: Centers items along the main axis (left to right).</li>
+        <li><strong>Vertical Alignment (<code>align-items</code>)</strong>: Centers items along the cross axis (top to bottom).</li>
+    </ul>
+    <p>Combining <code>justify-content: center;</code> and <code>align-items: center;</code> centers items both horizontally and vertically in a flex container.</p>
+</body>
+</html>

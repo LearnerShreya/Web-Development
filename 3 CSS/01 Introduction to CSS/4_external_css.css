@@ -1,0 +1,25 @@
+        
+        /* select by element  */
+        
+h1{
+    color: aquamarine;
+    background-color: black;
+}
+
+ul{
+    color: blue;
+    background-color: brown;
+}
+
+
+        /* select by class name  */
+        /* (.) is used for class name  */
+.first{
+    background-color: blue;
+}
+
+        /* select by id name (unique)  */
+        /* (#) is used for class name  */
+#third{
+    background-color: pink;
+}

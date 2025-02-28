@@ -1,0 +1,38 @@
+
+/* Color Change by name */
+h1{
+    color: blue;
+}
+
+h3{
+    color: pink;
+}
+
+/* Color Change by RGB value (0-255) */
+h2{
+    color: rgb(13, 220, 18);
+}
+
+/* Color Change by Hexadecimal values (0-f) */
+/* hex: 6 character, 2 for each RGB */
+h3{
+    color: #2d34f5;
+}
+
+/* Change by RGBA (RGBAlpha) */
+h3{
+    color: rgba(red, green, blue, alpha);
+}
+
+/* Change by HSL */
+/* h4{
+    color: hsl(hue, saturation, lightness);
+} */
+h4{
+    color: hsl(334, 37%, 41%);
+}
+
+/* Change by HSLA (HSLAlpha) */
+h4{
+    color: hsla;
+}

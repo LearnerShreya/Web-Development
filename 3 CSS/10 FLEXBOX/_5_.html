@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Comprehensive Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        pre, code {
+            background-color: #f4f4f4;
+            padding: 10px;
+            display: block;
+            margin: 10px 0;
+        }
+        .container {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .box {
+            background-color: #ddd;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox Comprehensive Guide</h1>
+    <p>Flexbox, short for <strong>Flexible Box Layout</strong>, is a powerful CSS module designed to create flexible and efficient layouts. It provides an easy and clean way to arrange, align, and distribute space among items within a container, even when their size is unknown or dynamic. This guide will walk you through the core concepts and properties of Flexbox, enabling you to build responsive and adaptable web designs.</p>
+
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#core-concepts">Core Concepts</a></li>
+        <li><a href="#flex-direction">Flex-Direction</a></li>
+        <li><a href="#justify-content">Justify-Content</a></li>
+        <li><a href="#align-items">Align-Items</a></li>
+        <li><a href="#flex-wrap">Flex-Wrap</a></li>
+        <li><a href="#align-content">Align-Content</a></li>
+        <li><a href="#flex-items">Flex Items</a></li>
+    </ul>
+
+    <h2 id="core-concepts">Core Concepts</h2>
+    <h3>Main Axis</h3>
+    <p><strong>Definition:</strong> The primary axis along which flex items are laid out.</p>
+    <p><strong>Default Direction:</strong> Horizontal (left to right).</p>
+    <p><strong>Influence:</strong> Controlled by the <code>flex-direction</code> property.</p>
+
+    <h3>Cross Axis</h3>
+    <p><strong>Definition:</strong> The axis perpendicular to the main axis.</p>
+    <p><strong>Default Direction:</strong> Vertical (top to bottom).</p>
+    <p><strong>Influence:</strong> Determines how items are aligned vertically when the main axis is horizontal.</p>
+
+    <h2 id="flex-direction">1. Flex-Direction</h2>
+    <p>The <code>flex-direction</code> property defines the direction of the main axis, determining how flex items are placed within the flex container.</p>
+
+    <h3 id="row-default">1.1 Row (Default)</h3>
+    <p><strong>Description:</strong> Items align horizontally from left to right.</p>
+    <pre><code>.container { display: flex; flex-direction: row; }</code></pre>
+    <div class="container" style="flex-direction: row;">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+
+    <h3 id="row-reverse">1.2 Row-Reverse</h3>
+    <p><strong>Description:</strong> Items align horizontally from right to left.</p>
+    <pre><code>.container { display: flex; flex-direction: row-reverse; }</code></pre>
+
+    <h3 id="column">1.3 Column</h3>
+    <p><strong>Description:</strong> Items align vertically from top to bottom.</p>
+    <pre><code>.container { display: flex; flex-direction: column; }</code></pre>
+
+    <h3 id="column-reverse">1.4 Column-Reverse</h3>
+    <p><strong>Description:</strong> Items align vertically from bottom to top.</p>
+    <pre><code>.container { display: flex; flex-direction: column-reverse; }</code></pre>
+
+    <h2 id="justify-content">2. Justify-Content</h2>
+    <p>The <code>justify-content</code> property aligns flex items along the <strong>main axis</strong>. It controls the distribution of space between and around items.</p>
+
+    <h3 id="flex-start">2.1 Flex-Start</h3>
+    <pre><code>.container { display: flex; justify-content: flex-start; }</code></pre>
+
+    <h3 id="flex-end">2.2 Flex-End</h3>
+    <pre><code>.container { display: flex; justify-content: flex-end; }</code></pre>
+
+    <h3 id="center">2.3 Center</h3>
+    <pre><code>.container { display: flex; justify-content: center; }</code></pre>
+
+    <h3 id="space-between">2.4 Space-Between</h3>
+    <pre><code>.container { display: flex; justify-content: space-between; }</code></pre>
+
+    <h3 id="space-around">2.5 Space-Around</h3>
+    <pre><code>.container { display: flex; justify-content: space-around; }</code></pre>
+
+    <h3 id="space-evenly">2.6 Space-Evenly</h3>
+    <pre><code>.container { display: flex; justify-content: space-evenly; }</code></pre>
+
+    <h2 id="align-items">3. Align-Items</h2>
+    <p>The <code>align-items</code> property aligns flex items along the <strong>cross axis</strong>. It controls the default alignment for all items within the container.</p>
+
+    <h3 id="align-start">3.1 Flex-Start</h3>
+    <pre><code>.container { display: flex; align-items: flex-start; }</code></pre>
+
+    <h3 id="align-end">3.2 Flex-End</h3>
+    <pre><code>.container { display: flex; align-items: flex-end; }</code></pre>
+
+    <h3 id="center">3.3 Center</h3>
+    <pre><code>.container { display: flex; align-items: center; }</code></pre>
+
+    <h3 id="stretch">3.4 Stretch (Default)</h3>
+    <pre><code>.container { display: flex; align-items: stretch; }</code></pre>
+
+    <h3 id="baseline">3.5 Baseline</h3>
+    <pre><code>.container { display: flex; align-items: baseline; }</code></pre>
+
+    <h2 id="flex-wrap">4. Flex-Wrap</h2>
+    <h3 id="nowrap">4.1 Nowrap (Default)</h3>
+    <pre><code>.container { display: flex; flex-wrap: nowrap; }</code></pre>
+
+    <h3 id="wrap">4.2 Wrap</h3>
+    <pre><code>.container { display: flex; flex-wrap: wrap; }</code></pre>
+
+    <h3 id="wrap-reverse">4.3 Wrap-Reverse</h3>
+    <pre><code>.container { display: flex; flex-wrap: wrap-reverse; }</code></pre>
+
+    <h2 id="align-content">5. Align-Content</h2>
+    <h3 id="align-flex-start">5.1 Flex-Start</h3>
+    <pre><code>.container { display: flex; flex-wrap: wrap; align-content: flex-start; }</code></pre>
+
+    <h3 id="align-flex-end">5.2 Flex-End</h3>
+    <pre><code>.container { display: flex; flex-wrap: wrap; align-content: flex-end; }</code></pre>
+
+    <h3 id="align-center">5.3 Center</h3>
+    <pre><code>.container { display: flex; flex-wrap: wrap; align-content: center; }</code></pre>
+
+    <h3 id="align-space-between">5.4 Space-Between</h3>
+    <pre><code>.container { display: flex; flex-wrap: wrap; align-content: space-between; }</code></pre>
+
+    <h3 id="align-space-around">5.5 Space-Around</h3>
+    <pre><code>.container { display: flex; flex-wrap: wrap; align-content: space-around; }</code></pre>
+
+    <h3 id="align-space-evenly">5.6 Space-Evenly</h3>
+    <pre><code>.container { display: flex; flex-wrap: wrap; align-content: space-evenly; }</code></pre>
+
+    <h2 id="flex-items">6. Flex Items</h2>
+    <h3 id="flex-grow">6.1 Flex-Grow</h3>
+    <pre><code>.box { flex-grow: 1; }</code></pre>
+
+    <h3 id="flex-shrink">6.2 Flex-Shrink</h3>
+    <pre><code>.box { flex-shrink: 1; }</code></pre>
+
+    <h3 id="flex-basis">6.3 Flex-Basis</h3>
+    <pre><code>.box { flex-basis: 100px; }</code></pre>
+
+    <h3 id="align-self">6.4 Align-Self</h3>
+    <pre><code>.box { align-self: center; }</code></pre>
+
+    <h2>Conclusion</h2>
+    <p>Mastering Flexbox provides a solid foundation for building adaptable, responsive web designs. With this guide, you now have the tools to experiment with Flexbox in your projects. Flexbox's versatility ensures it remains a fundamental part of modern web design and development.</p>
+</body>
+</html>

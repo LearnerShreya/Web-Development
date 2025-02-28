@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete CSS Notes on Text and Box Styling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 20px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    h1, h2, h3 {
+      color: #0056b3;
+    }
+    h1 {
+      border-bottom: 3px solid #ddd;
+      padding-bottom: 5px;
+    }
+    h2 {
+      border-left: 4px solid #0056b3;
+      padding-left: 10px;
+      margin-top: 20px;
+    }
+    p, ul {
+      margin: 0 0 10px 0;
+    }
+    .code {
+      background-color: #f0f0f0;
+      padding: 8px;
+      display: block;
+      border-left: 4px solid #0056b3;
+      margin: 10px 0;
+      font-family: monospace;
+    }
+    .highlight {
+      color: #d63384;
+      font-weight: bold;
+    }
+    .example {
+      background-color: #e7f1ff;
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 5px solid #0056b3;
+      font-family: monospace;
+    }
+    .visual-box {
+      display: inline-block;
+      padding: 10px;
+      background-color: #0056b3;
+      color: #fff;
+      text-align: center;
+      width: 150px;
+      margin: 10px;
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+      transition: background-color 1s ease;
+    }
+    .visual-box:hover {
+      background-color: #333;
+    }
+    .visual-text {
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Complete CSS Styling Guide for Text and Boxes</h1>
+
+<h2>1. Text Alignment and Direction</h2>
+<p>CSS provides control over how text is displayed and aligned. These properties are essential for handling layouts, especially in multilingual and complex document layouts:</p>
+
+<ul>
+  <li><span class="highlight">text-align</span>: Aligns text horizontally within its container. Possible values:
+    <ul>
+      <li><strong>left</strong> - aligns text to the left.</li>
+      <li><strong>right</strong> - aligns text to the right.</li>
+      <li><strong>center</strong> - centers text horizontally.</li>
+      <li><strong>justify</strong> - distributes text evenly across the line, aligning both left and right.</li>
+    </ul>
+  </li>
+  
+  <li><span class="highlight">direction</span>: Sets the text flow direction, useful for handling languages with right-to-left scripts:
+    <ul>
+      <li><strong>ltr</strong> - left to right, default for most languages.</li>
+      <li><strong>rtl</strong> - right to left, common in Arabic and Hebrew.</li>
+    </ul>
+  </li>
+  
+  <li><span class="highlight">unicode-bidi</span>: Works with <strong>direction</strong> to override default text flow, for embedding or isolating text fragments.</li>
+
+  <li><span class="highlight">text-align-last</span>: Adjusts alignment of the last line of text, allowing for customization of multiline text layouts.</li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong><br>
+  <code class="code">text-align: justify; direction: rtl;</code>
+</div>
+
+<p><strong>Use Case:</strong> These properties are essential for web layouts with mixed language text and for creating clean, justified blocks in paragraphs.</p>
+
+<h2>2. Text Decoration</h2>
+<p>Text decoration properties allow you to add emphasis with underlines, colors, and different line styles. Commonly used for links or highlighted text.</p>
+
+<ul>
+  <li><span class="highlight">text-decoration-line</span>: Specifies type of line decoration:
+    <ul>
+      <li><strong>underline</strong> - underlines the text.</li>
+      <li><strong>line-through</strong> - adds a strike-through.</li>
+      <li><strong>overline</strong> - places a line above text.</li>
+    </ul>
+  </li>
+
+  <li><span class="highlight">text-decoration-color</span>: Sets the color of the decoration line, independent of text color.</li>
+
+  <li><span class="highlight">text-decoration-style</span>: Defines the style of the line:
+    <ul>
+      <li><strong>solid</strong> - a continuous line.</li>
+      <li><strong>dotted</strong> - a line of dots.</li>
+      <li><strong>dashed</strong> - a dashed line.</li>
+    </ul>
+  </li>
+
+  <li><span class="highlight">text-decoration-thickness</span>: Specifies the thickness of the line decoration.</li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong><br>
+  <code class="code">text-decoration-line: underline; text-decoration-color: red; text-decoration-style: dashed;</code>
+</div>
+
+<p><strong>Use Case:</strong> Useful for styling links and important text without altering font styles.</p>
+
+<h2>3. Text Transformation</h2>
+<p>The <code>text-transform</code> property changes the capitalization style of text, ideal for standardizing headings or labels.</p>
+
+<ul>
+  <li><span class="highlight">text-transform</span>: Controls the case transformation:
+    <ul>
+      <li><strong>uppercase</strong> - converts text to uppercase.</li>
+      <li><strong>lowercase</strong> - converts text to lowercase.</li>
+      <li><strong>capitalize</strong> - capitalizes the first letter of each word.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong><br>
+  <code class="code">text-transform: capitalize;</code>
+</div>
+
+<p><strong>Use Case:</strong> Useful for automatically formatting user-inputted text or labels consistently.</p>
+
+<h2>4. Text Spacing</h2>
+<p>Proper spacing improves readability and can make layouts appear cleaner.</p>
+
+<ul>
+  <li><span class="highlight">text-indent</span>: Indents the first line of text, often used in paragraphs.</li>
+  
+  <li><span class="highlight">letter-spacing</span>: Adjusts space between letters, which can be useful for aesthetic or readability purposes.</li>
+
+  <li><span class="highlight">line-height</span>: Adjusts the line height, affecting vertical spacing between lines of text in a block.</li>
+
+  <li><span class="highlight">word-spacing</span>: Adds space between words, commonly used in typography for increased readability.</li>
+  
+  <li><span class="highlight">white-space</span>: Controls handling of white space in text:
+    <ul>
+      <li><strong>normal</strong> - collapses spaces and wraps lines.</li>
+      <li><strong>nowrap</strong> - prevents line breaks.</li>
+      <li><strong>pre</strong> - preserves spaces and line breaks exactly as written.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong><br>
+  <code class="code">line-height: 1.8; word-spacing: 0.5em;</code>
+</div>
+
+<p><strong>Use Case:</strong> Commonly used in typography adjustments to create clean, readable blocks of text.</p>
+
+<h2>5. Text Shadow</h2>
+<p><span class="highlight">text-shadow</span> adds a shadow effect to text, making it appear lifted or stylized.</p>
+
+<ul>
+  <li><span class="highlight">text-shadow</span>: Requires values for horizontal offset, vertical offset, blur radius, and color, allowing for highly customized shadow effects.</li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong><br>
+  <code class="code">text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);</code>
+</div>
+<div class="visual-text">Shadowed Text</div>
+
+<p><strong>Use Case:</strong> Widely used for headings or key text to add depth and visual appeal.</p>
+
+<h2>6. Box Shadow</h2>
+<p>Applies shadows around elements for a 3D effect, which is essential for cards, buttons, and interactive elements.</p>
+
+<ul>
+  <li><span class="highlight">box-shadow</span>: Controls element shadows with offsets, blur radius, spread radius, and color, enabling various styles, from subtle shadows to pronounced effects.</li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong><br>
+  <code class="code">box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);</code>
+</div>
+<div class="visual-box">Box Shadow</div>
+
+<p><strong>Use Case:</strong> Used in cards, containers, and modals for subtle depth or emphasis.</p>
+
+<h2>7. Transition</h2>
+<p>Controls smooth animation for property changes, adding fluidity to hover effects and interactive elements.</p>
+
+<ul>
+  <li><span class="highlight">transition</span>: Controls timing and easing of CSS property changes.</li>
+</ul>
+
+<div class="example">
+  <strong>Example:</strong><br>
+  <code class="code">transition: background-color 0.5s ease-in-out;</code>
+</div>
+
+<p><strong>Use Case:</strong> Adds smooth transitions to hover effects on buttons, links, or modals.</p>
+
+</body>
+</html>

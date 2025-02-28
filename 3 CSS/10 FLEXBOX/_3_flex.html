@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detailed Flexbox Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    h1, h2, h3, h4 {
+      color: #1a73e8;
+    }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.5em; }
+    h4 { font-size: 1.2em; }
+    .example, .highlight, .note, .use-case {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    .container {
+      display: flex;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #fff;
+      margin: 10px 0;
+      flex-wrap: wrap;
+    }
+    .box {
+      background-color: #1a73e8;
+      color: #fff;
+      padding: 10px;
+      margin: 5px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .highlight { font-weight: bold; color: #d9534f; }
+    .code {
+      background-color: #f1f1f1;
+      border-left: 4px solid #1a73e8;
+      padding: 10px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>Detailed Flexbox Guide</h1>
+
+  <!-- flex-direction -->
+  <h2>1. Flex Direction</h2>
+  <p>The <code>flex-direction</code> property sets the direction of the main axis along which the flex items are placed.</p>
+
+  <!-- row -->
+  <h3>1.1 Row</h3>
+  <p><code>flex-direction: row;</code> arranges items from left to right (default direction).</p>
+
+  <h4>Code Example:</h4>
+  <div class="code">
+    .container &#123; display: flex; flex-direction: row; &#125;
+  </div>
+
+  <h4>Visual Example:</h4>
+  <div class="container" style="flex-direction: row;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <div class="highlight">
+    <strong>Key Note:</strong> This is the default direction and works well for most layouts that need horizontal alignment.
+  </div>
+
+  <div class="use-case">
+    <strong>Use Case:</strong> Use <code>row</code> for horizontal layouts like navigation menus or rows of items.
+  </div>
+
+  <!-- row-reverse -->
+  <h3>1.2 Row-Reverse</h3>
+  <p><code>flex-direction: row-reverse;</code> arranges items from right to left.</p>
+
+  <h4>Code Example:</h4>
+  <div class="code">
+    .container &#123; display: flex; flex-direction: row-reverse; &#125;
+  </div>
+
+  <h4>Visual Example:</h4>
+  <div class="container" style="flex-direction: row-reverse;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <div class="highlight">
+    <strong>Key Note:</strong> Reverses the item order visually but does not change the document flow order.
+  </div>
+
+  <div class="use-case">
+    <strong>Use Case:</strong> <code>row-reverse</code> is useful for RTL (right-to-left) layouts or when needing reverse order for animation effects.
+  </div>
+
+  <!-- column -->
+  <h3>1.3 Column</h3>
+  <p><code>flex-direction: column;</code> arranges items from top to bottom.</p>
+
+  <h4>Code Example:</h4>
+  <div class="code">
+    .container &#123; display: flex; flex-direction: column; &#125;
+  </div>
+
+  <h4>Visual Example:</h4>
+  <div class="container" style="flex-direction: column; height: 200px;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <div class="highlight">
+    <strong>Key Note:</strong> Aligns items vertically, useful for stacked item layouts.
+  </div>
+
+  <div class="use-case">
+    <strong>Use Case:</strong> <code>column</code> is commonly used in mobile layouts or sidebars.
+  </div>
+
+  <!-- column-reverse -->
+  <h3>1.4 Column-Reverse</h3>
+  <p><code>flex-direction: column-reverse;</code> arranges items from bottom to top.</p>
+
+  <h4>Code Example:</h4>
+  <div class="code">
+    .container &#123; display: flex; flex-direction: column-reverse; &#125;
+  </div>
+
+  <h4>Visual Example:</h4>
+  <div class="container" style="flex-direction: column-reverse; height: 200px;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <div class="highlight">
+    <strong>Key Note:</strong> Like <code>column</code>, but reverses the visual order.
+  </div>
+
+  <div class="use-case">
+    <strong>Use Case:</strong> Use <code>column-reverse</code> for animations where items appear from the bottom up.
+  </div>
+
+  <!-- justify-content -->
+  <h2>2. Justify Content</h2>
+  <p>The <code>justify-content</code> property aligns flex items along the main axis.</p>
+
+  <!-- flex-start -->
+  <h3>2.1 Flex-Start</h3>
+  <p><code>justify-content: flex-start;</code> aligns items at the start of the container (default).</p>
+
+  <h4>Code Example:</h4>
+  <div class="code">
+    .container &#123; display: flex; justify-content: flex-start; &#125;
+  </div>
+
+  <h4>Visual Example:</h4>
+  <div class="container" style="justify-content: flex-start;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <div class="highlight">
+    <strong>Key Note:</strong> <code>flex-start</code> is the default and aligns items to the left in a row.
+  </div>
+
+  <div class="use-case">
+    <strong>Use Case:</strong> Common for lists or aligning items to the start.
+  </div>
+
+  <!-- flex-end -->
+  <h3>2.2 Flex-End</h3>
+  <p><code>justify-content: flex-end;</code> aligns items at the end of the container.</p>
+
+  <h4>Code Example:</h4>
+  <div class="code">
+    .container &#123; display: flex; justify-content: flex-end; &#125;
+  </div>
+
+  <h4>Visual Example:</h4>
+  <div class="container" style="justify-content: flex-end;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <div class="highlight">
+    <strong>Key Note:</strong> Aligns items to the right (or bottom for <code>column</code>).
+  </div>
+
+  <div class="use-case">
+    <strong>Use Case:</strong> Useful for alignment to the end in navigation bars or action bars.
+  </div>
+
+  <!-- center -->
+  <h3>2.3 Center</h3>
+  <p><code>justify-content: center;</code> centers items along the main axis.</p>
+
+  <h4>Code Example:</h4>
+  <div class="code">
+    .container &#123; display: flex; justify-content: center; &#125;
+  </div>
+
+  <h4>Visual Example:</h4>
+  <div class="container" style="justify-content: center;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <div class="highlight">
+    <strong>Key Note:</strong> Centers all items in a row or column.
+  </div>
+
+  <div class="use-case">
+    <strong>Use Case:</strong> Useful for balanced layouts where items need equal space around them.
+  </div>
+
+  <!-- space-between -->
+  <h3>2.4 Space-Between</h3>
+  <p><code>justify-content: space-between;</code> spaces items evenly, with the first item at the start and last at the end.</p>
+
+  <h4>Code Example:</h4>
+  <div class="code">
+    .container &#123; display: flex; justify-content: space-between; &#125;
+  </div>
+
+  <h4>Visual Example:</h4>
+  <div class="container" style="justify-content: space-between;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <div class="highlight">
+    <strong>Key Note:</strong> Creates even spacing between items, no gaps on edges.
+  </div>
+
+  <div class="use-case">
+    <strong>Use Case:</strong> Ideal for headers and footers where items need separation.
+  </div>
+
+  <!-- space-around -->
+  <h3>2.5 Space-Around</h3>
+  <p><code>justify-content: space-around;</code> spaces items with equal gaps on all sides.</p>
+
+  <h4>Code Example:</h4>
+  <div class="code">
+    .container &#123; display: flex; justify-content: space-around; &#125;
+  </div>
+
+  <h4>Visual Example:</h4>
+  <div class="container" style="justify-content: space-around;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <div class="highlight">
+    <strong>Key Note:</strong> Adds equal spacing on either side, creating a balanced look.
+  </div>
+
+  <div class="use-case">
+    <strong>Use Case:</strong> Useful for multiple centered elements with even spacing.
+  </div>
+
+  <!-- Further topics like align-items, align-self, flex-wrap, etc., follow a similar structure -->
+
+</body>
+</html>

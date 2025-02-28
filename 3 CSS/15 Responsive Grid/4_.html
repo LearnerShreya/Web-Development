@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid Example - Simple Explanation</title>
+  <style>
+    .container {
+      display: grid; 
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1rem;
+      place-items: center center; /* This centers all items in their cells */
+      height: 300px;
+      background-color: #f3f3f3;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .box {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1em;
+      border-radius: 4px;
+    }
+
+    .Box1 {
+      align-self: start; /* Moves this box to the top of its cell */
+      justify-self: left; /* Moves this box to the left of its cell */
+    }
+
+    .Box2 {
+      align-self: center; /* Centers this box vertically */
+    }
+
+    .Box3 {
+      align-self: end; /* Moves this box to the bottom of its cell */
+    }
+
+    .Box5 {
+      align-self: start; /* Moves this box to the top of its cell */
+      justify-self: left; /* Moves this box to the left of its cell */
+    }
+
+    .Box6 {
+      align-self: center; /* Centers this box vertically */
+    }
+
+    .Box7 {
+      align-self: end; /* Moves this box to the bottom of its cell */
+    }
+  </style>
+</head>
+<body>
+
+<h1>CSS Grid: Placing Items in a Simple Way</h1>
+<p>Here, we are learning how to arrange items in a grid using <code>place-items</code>, <code>align-self</code>, and <code>justify-self</code>. Let’s look at what each line of code does to help us position these boxes in the grid!</p>
+
+<div class="container">
+  <div class="box Box1">Box 1</div>
+  <div class="box Box2">Box 2</div>
+  <div class="box Box3">Box 3</div>
+  <div class="box">Box 4</div>
+  <div class="box Box5">Box 5</div>
+  <div class="box Box6">Box 6</div>
+  <div class="box Box7">Box 7</div>
+  <div class="box">Box 8</div>
+</div>
+
+<h2>How the Code Works</h2>
+<p>Here’s a simple explanation of what each property does:</p>
+
+<ul>
+  <li><strong><code>place-items: center center;</code></strong> - This makes all boxes go to the center of each cell by default, both horizontally and vertically.</li>
+  
+  <li>Now, let's change the position of specific boxes using <code>align-self</code> and <code>justify-self</code>:</li>
+</ul>
+
+<h3>Explanation of Individual Boxes:</h3>
+<ul>
+  <li><strong>Box 1:</strong> 
+    <ul>
+      <li><code>align-self: start;</code> - Moves it to the top of the cell (vertical alignment).</li>
+      <li><code>justify-self: left;</code> - Moves it to the left side of the cell (horizontal alignment).</li>
+    </ul>
+  </li>
+  
+  <li><strong>Box 2:</strong> 
+    <ul>
+      <li><code>align-self: center;</code> - Keeps it in the middle, both vertically and horizontally. Since it’s already centered by default, it stays in the middle of the cell.</li>
+    </ul>
+  </li>
+
+  <li><strong>Box 3:</strong> 
+    <ul>
+      <li><code>align-self: end;</code> - Moves it to the bottom of the cell, so it looks like it’s at the bottom.</li>
+    </ul>
+  </li>
+
+  <li><strong>Box 5:</strong> 
+    <ul>
+      <li><code>align-self: start;</code> - Moves it to the top of the cell (vertical alignment).</li>
+      <li><code>justify-self: left;</code> - Moves it to the left side of the cell (horizontal alignment).</li>
+    </ul>
+  </li>
+
+  <li><strong>Box 6:</strong> 
+    <ul>
+      <li><code>align-self: center;</code> - Keeps it in the middle of the cell, just like Box 2.</li>
+    </ul>
+  </li>
+
+  <li><strong>Box 7:</strong> 
+    <ul>
+      <li><code>align-self: end;</code> - Moves it to the bottom of the cell, like Box 3.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Code Summary</h2>
+
+<pre><code>
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  place-items: center center; /* Centers all boxes in their cells */
+}
+
+.Box1 {
+  align-self: start;
+  justify-self: left;
+}
+.Box2 {
+  align-self: center;
+}
+.Box3 {
+  align-self: end;
+}
+.Box5 {
+  align-self: start;
+  justify-self: left;
+}
+.Box6 {
+  align-self: center;
+}
+.Box7 {
+  align-self: end;
+}
+</code></pre>
+
+<p>By using <code>align-self</code> and <code>justify-self</code>, we can move boxes to different parts of each cell. <code>align-self</code> is for vertical movement (up or down), and <code>justify-self</code> is for horizontal movement (left or right).</p>
+
+</body>
+</html>

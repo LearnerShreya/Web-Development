@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive CSS 2D and 3D Transformations</title>
+    <style>
+        /* Basic Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            margin-top: 0;
+        }
+        section {
+            margin-bottom: 50px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        /* Box Styling */
+        .box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background-color: #ff6f61;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.5s ease, background-color 0.5s ease;
+        }
+        .box:hover {
+            background-color: #ff8a80;
+        }
+        pre {
+            background-color: #e8f0fe;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #555;
+            background-color: #f9f9f9;
+            border-left: 4px solid #ff6f61;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Guide to CSS 2D and 3D Transformations</h1>
+    <p>This guide demonstrates various CSS transformations with interactive examples. Hover over each box to see the transformation effect in action.</p>
+
+    <!-- Translate -->
+    <section>
+        <h2>1. <code>translate()</code> Transformation</h2>
+        <p><strong>Description:</strong> <code>translate()</code> moves an element along the X and/or Y axes. It’s useful for adjusting an element’s position without affecting its surrounding elements.</p>
+        <p><strong>Hover effect:</strong> Moves 50px right and 20px down.</p>
+        <div class="container">
+            <div class="box" onmouseover="this.style.transform='translate(50px, 20px)';" onmouseout="this.style.transform='translate(0px, 0px)';">
+                Translate
+            </div>
+        </div>
+        <pre><code>/* Moves element 50px right and 20px down on hover */
+.box {
+    transition: transform 0.5s;
+}
+.box:hover {
+    transform: translate(50px, 20px);
+}</code></pre>
+        <div class="note">
+            <strong>Note:</strong> 
+            <ul>
+                <li>Single value in <code>translate()</code> affects the X-axis only.</li>
+                <li>Double values affect X-axis (horizontal) and Y-axis (vertical) respectively.</li>
+                <li>Positive X-axis values move the element to the right; negative values move it to the left.</li>
+                <li>Positive Y-axis values move the element down; negative values move it up.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Scale -->
+    <section>
+        <h2>2. <code>scale()</code> Transformation</h2>
+        <p><strong>Description:</strong> <code>scale()</code> resizes an element. It can scale the element proportionally or independently along X and Y axes.</p>
+        <p><strong>Hover effect:</strong> Enlarges to 1.5 times its original size.</p>
+        <div class="container">
+            <div class="box" onmouseover="this.style.transform='scale(1.5)';" onmouseout="this.style.transform='scale(1)';">
+                Scale
+            </div>
+        </div>
+        <pre><code>/* Scales the element to 1.5 times its size on hover */
+.box:hover {
+    transform: scale(1.5);
+}</code></pre>
+        <div class="note">
+            <strong>Note:</strong>
+            <ul>
+                <li>With one value, <code>scale()</code> applies the scaling factor uniformly to both X and Y axes.</li>
+                <li>With two values, the first value scales the X-axis, and the second value scales the Y-axis.</li>
+                <li>A value of <code>1</code> maintains the original size; values less than <code>1</code> shrink the element.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Rotate -->
+    <section>
+        <h2>3. <code>rotate()</code> Transformation</h2>
+        <p><strong>Description:</strong> <code>rotate()</code> rotates an element clockwise by a specified degree.</p>
+        <p><strong>Hover effect:</strong> Rotates 45 degrees clockwise.</p>
+        <div class="container">
+            <div class="box" onmouseover="this.style.transform='rotate(45deg)';" onmouseout="this.style.transform='rotate(0deg)';">
+                Rotate
+            </div>
+        </div>
+        <pre><code>/* Rotates the element 45 degrees clockwise on hover */
+.box:hover {
+    transform: rotate(45deg);
+}</code></pre>
+        <div class="note">
+            <strong>Note:</strong>
+            <ul>
+                <li>Positive degree values rotate the element clockwise.</li>
+                <li>Negative degree values rotate the element counter-clockwise.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Skew -->
+    <section>
+        <h2>4. <code>skew()</code> Transformation</h2>
+        <p><strong>Description:</strong> <code>skew()</code> tilts an element along the X or Y axis, creating a slanted shape.</p>
+        <p><strong>Hover effect:</strong> Skews the box by 20 degrees along the X-axis.</p>
+        <div class="container">
+            <div class="box" onmouseover="this.style.transform='skewX(20deg)';" onmouseout="this.style.transform='skewX(0deg)';">
+                Skew
+            </div>
+        </div>
+        <pre><code>/* Skews the element by 20 degrees along the X-axis on hover */
+.box:hover {
+    transform: skewX(20deg);
+}</code></pre>
+        <div class="note">
+            <strong>Note:</strong>
+            <ul>
+                <li><code>skewX()</code> tilts the element horizontally, while <code>skewY()</code> tilts it vertically.</li>
+                <li>Positive values tilt in the specified axis's direction; negative values tilt the opposite way.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Chaining Transforms -->
+    <section>
+        <h2>5. Chaining Transformations</h2>
+        <p><strong>Description:</strong> Multiple transformations can be combined in a single <code>transform</code> property. They’re applied in the sequence they appear. You can chain different transformations like <code>translate()</code>, <code>scale()</code>, and <code>rotate()</code> to create complex effects.</p>
+        <p><strong>Hover effect:</strong> Combines <code>translate</code>, <code>rotate</code>, and <code>scale</code> transformations.</p>
+        <div class="container">
+            <div class="box" onmouseover="this.style.transform='translate(20px, 10px) rotate(45deg) scale(1.2)';" onmouseout="this.style.transform='translate(0px, 0px) rotate(0deg) scale(1)';">
+                Chain
+            </div>
+        </div>
+        <pre><code>/* Combines translate, rotate, and scale on hover */
+    .box:hover {
+        transform: translate(20px, 10px) rotate(45deg) scale(1.2);
+    }</code></pre>
+        <p><strong>Note:</strong> Chaining transformations allows you to apply multiple transformations to an element in one go. They will be applied in the order they are written. The transformations are combined without resetting each other.</p>
+    </section>
+    
+    <!-- Transform Origin -->
+    <section>
+        <h2>6. <code>transform-origin</code> Property</h2>
+        <p><strong>Description:</strong> The <code>transform-origin</code> property specifies the point of origin for transformations. By default, it is set to the center of the element, but you can adjust it to change how the transformation behaves.</p>
+        <p><strong>Hover effect:</strong> Changes the origin of rotation to the bottom-right corner.</p>
+        <div class="container">
+            <div class="box" onmouseover="this.style.transformOrigin='bottom right'; this.style.transform='rotate(45deg)';" onmouseout="this.style.transformOrigin='center'; this.style.transform='rotate(0deg)';">
+                Origin
+            </div>
+        </div>
+        <pre><code>/* Changes the rotation origin to the bottom-right corner */
+.box:hover {
+    transform-origin: bottom right;
+    transform: rotate(45deg);
+}</code></pre>
+        <div class="note">
+            <strong>Note:</strong> 
+            <ul>
+                <li><code>transform-origin</code> can accept values like <code>top left</code>, <code>center</code>, <code>bottom right</code>, and specific length or percentage values.</li>
+                <li>It determines the pivot point around which the transformations such as rotation, scaling, and skewing occur.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3D Transformations -->
+    <section>
+        <h2>7. 3D Transformations</h2>
+        <p><strong>Description:</strong> 3D transformations allow you to move, rotate, scale, and transform elements in three-dimensional space. This introduces the concept of depth, giving the illusion that elements are placed in a 3D environment.</p>
+        <p><strong>Note:</strong> To achieve a 3D effect, you'll need to apply a <code>perspective</code> property on the container of the 3D elements. This defines the distance from the viewer's eye to the element, which creates the depth.</p>
+
+        <div class="container">
+            <div class="box" onmouseover="this.style.transform='rotateY(45deg)';" onmouseout="this.style.transform='rotateY(0deg)';">
+                RotateY
+            </div>
+        </div>
+        <pre><code>/* Apply rotation along the Y-axis in 3D space */
+.box:hover {
+    transform: rotateY(45deg);
+}</code></pre>
+        <div class="note">
+            <strong>Note:</strong>
+            <ul>
+                <li><code>rotateX()</code> rotates the element around the X-axis (horizontal axis).</li>
+                <li><code>rotateY()</code> rotates the element around the Y-axis (vertical axis).</li>
+                <li><code>rotateZ()</code> rotates the element around the Z-axis (perpendicular to the screen).</li>
+                <li>3D transformations require a 3D context, which is established by setting <code>perspective</code> on a parent element.</li>
+            </ul>
+        </div>
+        
+        <!-- Rotate and Translate in 3D -->
+        <div class="container">
+            <div class="box" style="perspective: 500px;" onmouseover="this.style.transform='rotateX(30deg) translateZ(50px)';" onmouseout="this.style.transform='rotateX(0deg) translateZ(0)';">
+                3D Move
+            </div>
+        </div>
+        <pre><code>/* Apply 3D rotation along the X-axis and translation along the Z-axis */
+.box:hover {
+    transform: rotateX(30deg) translateZ(50px);
+}</code></pre>
+        <div class="note">
+            <strong>Note:</strong>
+            <ul>
+                <li><code>translateZ()</code> moves the element along the Z-axis, away from or towards the viewer.</li>
+                <li>Combining <code>rotateX()</code>, <code>rotateY()</code>, and <code>translateZ()</code> creates advanced 3D effects.</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

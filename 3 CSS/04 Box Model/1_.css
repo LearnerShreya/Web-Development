@@ -1,0 +1,68 @@
+
+/* 1-2-3-4 values: distributed clock wise direction */
+
+/* when we have 2 option for width then 1st value is allocated to top and botton whereas 2nd to right & left */
+
+/* when we have 3 option for width then 1st value is allocated to top, 2nd to right & left and 3rd value to bottom */
+
+/* If it has 4 values, they set top, right, bottom and left  */
+
+
+h2{
+    background-color: aqua;
+    /* width: 50vw; */
+    width: 300px;
+    height: 200px;
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: brown; */
+    border-radius: 20px;
+    /* Shortcuts */
+    border: 5px brown solid;
+    padding: 10px;
+    /* padding: 10px 20px ;
+    padding: 10px 20px 30px ;
+    padding: 10px 20px 30px 40px; */
+    margin: 25px;
+}
+
+h4{
+    background-color: plum;
+    border-left-width: 10px;
+    border-color: blueviolet;
+    border-style: solid;
+    
+}
+
+h3{
+    background-color: plum;
+    border-left-width: 10px;
+    border-left-color: blue;
+    border-left-style: solid;
+}
+
+
+/* 1-2-3-4 values: distributed clock wise direction */
+
+/* when we have 2 option for width then 1st value is allocated to top and botton whereas 2nd to right & left */
+ul{
+    background-color: pink;
+    border-width: 10px 20px;
+    border-color: maroon;
+    border-style: solid;
+}
+/* when we have 3 option for width then 1st value is allocated to top, 2nd to right & left and 3rd value to bottom */
+ol{
+    background-color: pink;
+    border-width: 10px 20px 30px;
+    border-color: maroon;
+    border-style: solid;
+}
+/* If it has 4 values, they set top, right, bottom and left  */
+
+p{
+    border-width: 10px;
+    border-color: black;
+    border-style: solid;
+    padding: 15px;
+}

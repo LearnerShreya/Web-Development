@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #61b0a6;
+            text-align: center;
+        }
+        h3 {
+            color: #2196F3;
+            margin-top: 1.5rem;
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        code {
+            /* background: #f4f4f4; */
+            border-left: 3px solid #4CAF50;
+            padding: 0.5rem;
+            display: block;
+            margin: 1rem 0;
+            white-space: pre-wrap;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        pre code {
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+        }
+        .example {
+            background-color: #67b7ac;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+
+         /* Define the @keyframes */
+         @keyframes slideIn {
+            0%   { transform: translateX(-100%); opacity: 0; }
+            50%  { transform: translateX(-50%); opacity: 0.5; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Apply animation to example class */
+        .animate-slideIn {
+            animation: slideIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Animation Properties</h1>
+    <h2>A Complete Guide with Examples</h2>
+    <h2><a href="https://www.w3schools.com/css/css3_animations.asp">w3schools</a></h2>
+    <h2><a href="https://www.transparenttextures.com/">Transparent Textures</a></h2>
+
+    <section>
+        <h3>@keyframes</h3>
+        <p><b>Definition:</b> The <code>@keyframes</code> rule defines intermediate steps for an animation.</p>
+        <p><b>Syntax:</b></p>
+        <pre>
+<code>
+@keyframes slideIn {
+    0%   { transform: translateX(-100%); opacity: 0; } /* Start */
+    50%  { transform: translateX(-50%); opacity: 0.5; } /* Midpoint */
+    100% { transform: translateX(0); opacity: 1; } /* End */
+}
+</code>
+        </pre>
+        <p><b>Visual Example:</b></p>
+        <div class="example" style="animation: slideIn 2s ease-in-out;">
+            <p>This text slides in from the left.</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>animation-name</h3>
+        <p><b>Definition:</b> Specifies the name of the <code>@keyframes</code> animation.</p>
+        <p><b>Example:</b></p>
+        <pre>
+<code>
+.element {
+    animation-name: slideIn;
+}
+</code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>animation-duration</h3>
+        <p><b>Definition:</b> Specifies how long the animation runs.</p>
+        <p><b>Example:</b></p>
+        <pre>
+<code>
+.element {
+    animation-duration: 3s; /* 3 seconds */
+}
+</code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>animation-delay</h3>
+        <p><b>Definition:</b> Specifies the time to wait before the animation starts.</p>
+        <p><b>Example:</b></p>
+        <pre>
+<code>
+.element {
+    animation-delay: 2s; /* Waits 2 seconds before starting */
+}
+</code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>animation-iteration-count</h3>
+        <p><b>Definition:</b> Specifies the number of times the animation should repeat.</p>
+        <p><b>Values:</b></p>
+        <ul>
+            <li><code>1</code>: Runs once (default).</li>
+            <li><code>infinite</code>: Repeats indefinitely.</li>
+            <li><code>n</code>: Repeats <code>n</code> times.</li>
+        </ul>
+        <p><b>Example:</b></p>
+        <pre>
+<code>
+.element {
+    animation-iteration-count: infinite;
+}
+</code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>animation-timing-function</h3>
+        <p><b>Definition:</b> Specifies how the animation progresses over time.</p>
+        <p><b>Values:</b></p>
+        <ul>
+            <li><code>linear</code>: Uniform speed throughout the animation.</li>
+            <li><code>ease</code>: Starts slow, accelerates, then slows down.</li>
+            <li><code>ease-in</code>: Starts slow and speeds up.</li>
+            <li><code>ease-out</code>: Starts fast and slows down.</li>
+            <li><code>ease-in-out</code>: Starts slow, speeds up, then slows down.</li>
+            <li><code>cubic-bezier()</code>: Custom timing curve.</li>
+        </ul>
+        <p><b>Example:</b></p>
+        <pre>
+<code>
+.element {
+    animation-timing-function: ease-in-out;
+}
+</code>
+        </pre>
+        <p><b>Visual Example:</b></p>
+        <div class="example" style="animation: slideIn 2s ease-in-out infinite;">
+            <p>This text eases in and out smoothly.</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>animation-direction</h3>
+        <p><b>Definition:</b> Specifies whether the animation plays forward, backward, or alternates.</p>
+        <p><b>Values:</b></p>
+        <ul>
+            <li><code>normal</code>: Plays forward (default).</li>
+            <li><code>reverse</code>: Plays backward.</li>
+            <li><code>alternate</code>: Alternates forward and backward.</li>
+            <li><code>alternate-reverse</code>: Alternates backward and forward.</li>
+        </ul>
+        <p><b>Example:</b></p>
+        <pre>
+<code>
+.element {
+    animation-direction: alternate;
+}
+</code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>animation-fill-mode</h3>
+        <p><b>Definition:</b> Specifies how styles are applied before/after the animation.</p>
+        <p><b>Values:</b></p>
+        <ul>
+            <li><code>none</code>: Default. No styles applied outside the animation.</li>
+            <li><code>forwards</code>: Retains the final keyframe styles.</li>
+            <li><code>backwards</code>: Applies the first keyframe styles before the animation starts.</li>
+            <li><code>both</code>: Applies both forwards and backwards styles.</li>
+        </ul>
+        <p><b>Example:</b></p>
+        <pre>
+<code>
+.element {
+    animation-fill-mode: forwards;
+}
+</code>
+        </pre>
+    </section>
+
+    <section>
+        <h3>animation (Shorthand)</h3>
+        <p><b>Definition:</b> A shorthand for all animation properties.</p>
+        <p><b>Syntax:</b></p>
+        <pre>
+<code>
+animation: <em>name duration timing-function delay iteration-count direction fill-mode</em>;
+</code>
+        </pre>
+        <p><b>Example:</b></p>
+        <pre>
+<code>
+.element {
+    animation: slideIn 3s ease-in 1s infinite alternate forwards;
+}
+</code>
+        </pre>
+    </section>
+</body>
+</html>

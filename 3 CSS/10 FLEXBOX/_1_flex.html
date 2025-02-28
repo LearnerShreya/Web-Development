@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+      margin: 20px;
+    }
+    h1, h2, h3 {
+      color: #1a73e8;
+      border-bottom: 2px solid #ddd;
+    }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.2em; }
+    .example {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      font-family: monospace;
+    }
+    .code {
+      background-color: #f1f1f1;
+      border-left: 4px solid #1a73e8;
+      padding: 10px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    .container {
+      display: flex;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background: #fff;
+      margin: 10px 0;
+    }
+    .box {
+      background-color: #1a73e8;
+      color: #fff;
+      padding: 15px;
+      margin: 5px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #d9534f;
+    }
+  </style>
+</head>
+<body>
+  <h1>Flexbox Comprehensive Notes</h1>
+  <button><a href="https://flexboxfroggy.com/">flexbox froggy game</a></button>
+
+  <h2>Main Axis & Cross Axis</h2>
+  <p>The <strong>main axis</strong> is the primary axis along which flex items are placed (horizontal by default), while the <strong>cross axis</strong> is perpendicular to the main axis (vertical by default).</p>
+
+  <h2>1. flex-direction</h2>
+  <p>The <code>flex-direction</code> property determines the direction of the main axis:</p>
+  <ul>
+    <li><code>row</code>: Default; items align horizontally from left to right.</li>
+    <li><code>row-reverse</code>: Items align horizontally from right to left.</li>
+    <li><code>column</code>: Items align vertically from top to bottom.</li>
+    <li><code>column-reverse</code>: Items align vertically from bottom to top.</li>
+  </ul>
+  <h3>Example:</h3>
+  <div class="code">
+    .container &#123; display: flex; flex-direction: row; &#125;
+  </div>
+  <div class="container" style="flex-direction: row;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <h3>Key Notes:</h3>
+  <p>Use <code>row</code> for typical horizontal layouts and <code>column</code> for vertical stacking.</p>
+
+  <h2>2. justify-content</h2>
+  <p>The <code>justify-content</code> property aligns items along the main axis:</p>
+  <ul>
+    <li><code>flex-start</code>: Items align to the start of the container.</li>
+    <li><code>flex-end</code>: Items align to the end of the container.</li>
+    <li><code>center</code>: Items are centered along the main axis.</li>
+    <li><code>space-between</code>: Equal space between items, no space at edges.</li>
+    <li><code>space-around</code>: Equal space around items.</li>
+    <li><code>space-evenly</code>: Equal space between and around items.</li>
+  </ul>
+  <h3>Example:</h3>
+  <div class="code">
+    .container &#123; display: flex; justify-content: space-around; &#125;
+  </div>
+  <div class="container" style="justify-content: space-around;">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+
+  <h3>Key Notes:</h3>
+  <p><span class="highlight">Important:</span> Use <code>justify-content</code> based on how you want space distributed along the main axis.</p>
+
+  <h2>3. align-items</h2>
+  <p>The <code>align-items</code> property aligns items along the cross axis:</p>
+  <ul>
+    <li><code>flex-start</code>: Aligns items to the start of the cross axis.</li>
+    <li><code>flex-end</code>: Aligns items to the end of the cross axis.</li>
+    <li><code>center</code>: Centers items along the cross axis.</li>
+    <li><code>stretch</code>: Stretches items to fill container along the cross axis (default).</li>
+    <li><code>baseline</code>: Aligns items based on their text baseline.</li>
+  </ul>
+
+  <h2>4. flex-wrap</h2>
+  <p>The <code>flex-wrap</code> property controls item wrapping:</p>
+  <ul>
+    <li><code>nowrap</code>: Items stay on a single line (default).</li>
+    <li><code>wrap</code>: Items wrap onto multiple lines from top to bottom.</li>
+    <li><code>wrap-reverse</code>: Items wrap onto multiple lines from bottom to top.</li>
+  </ul>
+
+  <h2>5. align-content</h2>
+  <p>Controls how multiple rows are aligned within a container:</p>
+  <ul>
+    <li><code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, <code>space-evenly</code></li>
+  </ul>
+
+  <h2>6. Flex Item Properties</h2>
+  <h3>order</h3>
+  <p>Controls the visual order of flex items. <code>order: 0;</code> is default.</p>
+
+  <h3>flex-grow</h3>
+  <p>Defines how much a flex item grows relative to others when extra space is available.</p>
+
+  <h3>flex-shrink</h3>
+  <p>Defines how much a flex item shrinks relative to others when space is limited.</p>
+
+  <h3>flex-basis</h3>
+  <p>Sets the initial size of an item before growth or shrinkage.</p>
+
+  <h3>align-self</h3>
+  <p>Overrides <code>align-items</code> for individual flex items.</p>
+
+  <h2>Summary</h2>
+  <p>Flexbox is a powerful layout model for creating responsive layouts with ease. Understanding properties like <code>flex-direction</code>, <code>justify-content</code>, and <code>align-items</code> allows you to control layout direction, alignment, and distribution of space within the container.</p>
+</body>
+</html>

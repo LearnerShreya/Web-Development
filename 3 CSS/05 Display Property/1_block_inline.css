@@ -1,0 +1,33 @@
+
+div{
+    /* display: inline; */
+    /* display: inline; block element ko inline banane ke liye */
+    /* display: inline-block; */
+    /* display: inline-block; behave to inline ke tarah hi karega but hum yaha height width manage kar sakte hai*/
+}
+
+.first{
+    background-color: orange;
+}
+
+.second{
+    background-color: aqua;
+}
+
+span{
+    background-color: green;
+    /* display: block; */
+    /* display: block; inline ko block banane ke liye */
+
+}
+span{
+    background-color: green;
+    display: inline-block;
+    /* display: inline-block; behave to inline ke tarah hi karega but hum yaha height width manage kar sakte hai */
+    /* but isme margin kaise work karega? */
+
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+
+}

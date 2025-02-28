@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Depth CSS Transitions Guide</title>
+    <style>
+        /* Base styles for the boxes */
+        .box {
+            width: 200px;
+            height: 100px;
+            margin: 20px;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+            transition-property: width, background-color, transform;
+        }
+
+        /* Transition property examples */
+        .property-example {
+            background-color: royalblue;
+            transition-property: background-color;
+            transition-duration: 2s;
+        }
+        .property-example:hover {
+            background-color: tomato;
+        }
+
+        /* Transition duration examples */
+        .duration-1s {
+            background-color: darkseagreen;
+            transition-duration: 1s;
+        }
+        .duration-3s {
+            background-color: darkseagreen;
+            transition-duration: 3s;
+        }
+        .duration-1s:hover, .duration-3s:hover {
+            width: 300px;
+        }
+
+        /* Timing function examples */
+        .linear {
+            background-color: coral;
+            transition-timing-function: linear;
+        }
+        .ease {
+            background-color: coral;
+            transition-timing-function: ease;
+        }
+        .ease:hover, .linear:hover {
+            width: 300px;
+        }
+
+        /* Delay examples */
+        .delay-0 {
+            background-color: slateblue;
+            transition-delay: 0s;
+        }
+        .delay-1 {
+            background-color: slateblue;
+            transition-delay: 1s;
+        }
+        .delay-0:hover, .delay-1:hover {
+            width: 300px;
+        }
+
+        /* Example for transition: all */
+        .transition-all {
+            background-color: darkorchid;
+            transition: all 2s ease-in-out;
+        }
+        .transition-all:hover {
+            width: 250px;
+            background-color: mediumseagreen;
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+<body>
+
+<h1>CSS Transitions: Comprehensive Guide</h1>
+
+<section>
+    <h2>1. Transition Property</h2>
+    <p>The <strong>transition-property</strong> specifies which CSS property to animate. Only animatable properties like <code>background-color</code>, <code>width</code>, <code>opacity</code>, and <code>transform</code> can be transitioned. You can specify multiple properties, separated by commas.</p>
+    
+    <h3>Example: Transition on background-color only</h3>
+    <div class="box property-example">Hover Me</div>
+    <pre><code>
+.property-example {
+    background-color: royalblue;
+    transition-property: background-color;
+    transition-duration: 2s;
+}
+.property-example:hover {
+    background-color: tomato;
+}
+    </code></pre>
+
+    <h3>Using <code>all</code> as the Property</h3>
+    <p>To apply a transition to all animatable properties, use <code>transition-property: all;</code>:</p>
+    <div class="box transition-all">Hover Me</div>
+    <pre><code>
+.transition-all {
+    background-color: darkorchid;
+    transition: all 2s ease-in-out;
+}
+.transition-all:hover {
+    width: 250px;
+    background-color: mediumseagreen;
+    transform: rotate(15deg);
+}
+    </code></pre>
+</section>
+
+<section>
+    <h2>2. Transition Duration</h2>
+    <p>The <strong>transition-duration</strong> defines how long the transition should take to complete, specified in seconds (<code>s</code>) or milliseconds (<code>ms</code>).</p>
+    
+    <h3>Example: Duration of 1 second vs. 3 seconds</h3>
+    <div class="box duration-1s">Hover Me (1s)</div>
+    <div class="box duration-3s">Hover Me (3s)</div>
+    <pre><code>
+.duration-1s {
+    background-color: darkseagreen;
+    transition-duration: 1s;
+}
+.duration-3s {
+    background-color: darkseagreen;
+    transition-duration: 3s;
+}
+.duration-1s:hover, .duration-3s:hover {
+    width: 300px;
+}
+    </code></pre>
+    <p>Notice the different speeds of the transitions on hover.</p>
+</section>
+
+<section>
+    <h2>3. Transition Timing Function</h2>
+    <p>The <strong>transition-timing-function</strong> controls the speed of the transition over its duration. Common values include:</p>
+    <ul>
+        <li><strong>linear</strong>: Constant speed throughout.</li>
+        <li><strong>ease</strong>: Starts slow, speeds up, then slows down.</li>
+        <li><strong>ease-in</strong>: Slow start, speeding up towards the end.</li>
+        <li><strong>ease-out</strong>: Fast start, slowing towards the end.</li>
+        <li><strong>ease-in-out</strong>: Slow start and end, faster middle.</li>
+    </ul>
+    
+    <h3>Example: Linear vs. Ease Timing Functions</h3>
+    <div class="box linear">Hover Me (linear)</div>
+    <div class="box ease">Hover Me (ease)</div>
+    <pre><code>
+.linear {
+    background-color: coral;
+    transition-timing-function: linear;
+}
+.ease {
+    background-color: coral;
+    transition-timing-function: ease;
+}
+.linear:hover, .ease:hover {
+    width: 300px;
+}
+    </code></pre>
+    <p>Notice the difference in speed behavior between <code>linear</code> and <code>ease</code>.</p>
+</section>
+
+<section>
+    <h2>4. Transition Delay</h2>
+    <p>The <strong>transition-delay</strong> property specifies a delay before the transition starts, giving a pause effect before the animation begins.</p>
+    
+    <h3>Example: No Delay vs. 1-Second Delay</h3>
+    <div class="box delay-0">Hover Me (0s delay)</div>
+    <div class="box delay-1">Hover Me (1s delay)</div>
+    <pre><code>
+.delay-0 {
+    background-color: slateblue;
+    transition-delay: 0s;
+}
+.delay-1 {
+    background-color: slateblue;
+    transition-delay: 1s;
+}
+.delay-0:hover, .delay-1:hover {
+    width: 300px;
+}
+    </code></pre>
+    <p>Hover over each box to see how a 1-second delay affects the transition.</p>
+</section>
+
+<section>
+    <h2>5. Compound Transitions: Multiple Properties with Different Durations</h2>
+    <p>You can apply different durations for different properties in a single transition, using commas to separate them.</p>
+    <div class="box compound-transition">Hover Me</div>
+    <style>
+        .compound-transition {
+            background-color: royalblue;
+            transition: width 2s, background-color 1s, transform 3s;
+        }
+        .compound-transition:hover {
+            width: 300px;
+            background-color: tomato;
+            transform: rotate(20deg);
+        }
+    </style>
+    <pre><code>
+.compound-transition {
+    background-color: royalblue;
+    transition: width 2s, background-color 1s, transform 3s;
+}
+.compound-transition:hover {
+    width: 300px;
+    background-color: tomato;
+    transform: rotate(20deg);
+}
+    </code></pre>
+    <p>This example shows three properties (width, background-color, transform) each with a different duration, creating a staggered effect.</p>
+</section>
+
+</body>
+</html>

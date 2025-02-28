@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions Guide</title>
+    <style>
+        /* Basic styles */
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        .example { border: 1px solid #ccc; padding: 10px; margin: 10px 0; background-color: #f9f9f9; }
+        .section-title { font-size: 1.2em; font-weight: bold; color: #333; margin-top: 20px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; }
+        .box { width: 100px; height: 100px; background-color: #4CAF50; margin: 10px 0; transition: background-color 2s ease, width 2s ease-in-out, opacity 2s ease-out 1s; }
+        .box:hover { background-color: #FF5733; width: 150px; opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Transitions</h1>
+    <p>This guide covers the <strong>transition</strong> property in CSS, which is used to animate changes in CSS properties smoothly.</p>
+
+    <!-- Explanation of transition -->
+    <div class="section-title">Understanding the Transition Property</div>
+    <p>The <code>transition</code> property in CSS allows for smooth, animated changes to CSS properties. It accepts the following parameters:</p>
+    <ul>
+        <li><strong>Property:</strong> Specifies the CSS property to animate (e.g., <code>background-color</code>, <code>width</code>, <code>opacity</code>). Using <code>all</code> applies the transition to all animatable properties.</li>
+        <li><strong>Duration:</strong> Defines the time taken to complete the transition, typically in seconds (s) or milliseconds (ms).</li>
+        <li><strong>Timing-function:</strong> Describes how the transition progresses over time, including options such as:
+            <ul>
+                <li><code>linear</code>: A constant transition speed.</li>
+                <li><code>ease</code>: Starts slow, speeds up, then slows down.</li>
+                <li><code>ease-in</code>: Starts slow and speeds up.</li>
+                <li><code>ease-out</code>: Starts fast and slows down.</li>
+                <li><code>ease-in-out</code>: Starts slow, speeds up, then slows down again.</li>
+            </ul>
+        </li>
+        <li><strong>Delay:</strong> Sets the delay before the transition starts, in seconds (s) or milliseconds (ms).</li>
+    </ul>
+
+    <div class="example">
+        <div class="box"></div>
+        <p>Hover over the box to see the transition effect.</p>
+    </div>
+    <pre>
+    /* Code Example */
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #4CAF50;
+        transition: background-color 2s ease, width 2s ease-in-out, opacity 2s ease-out 1s;
+    }
+    .box:hover {
+        background-color: #FF5733;
+        width: 150px;
+        opacity: 0.7;
+    }
+    </pre>
+
+    <!-- Explanation of each transition component -->
+    <div class="section-title">1. Property</div>
+    <p>The <code>property</code> specifies which CSS property to animate. For instance, using <code>background-color</code> applies the transition only to color changes. Using <code>all</code> animates all changes on the element.</p>
+
+    <div class="section-title">2. Duration</div>
+    <p>The <code>duration</code> defines the length of the transition. It is essential for controlling the timing, with values such as <code>2s</code> for two seconds or <code>500ms</code> for half a second.</p>
+
+    <div class="section-title">3. Timing Function</div>
+    <p>The <code>timing-function</code> affects the transition speed curve over time. Below are common timing functions:</p>
+    <ul>
+        <li><strong>linear:</strong> A constant speed.</li>
+        <li><strong>ease:</strong> Starts slow, accelerates, then decelerates.</li>
+        <li><strong>ease-in:</strong> Starts slowly and accelerates.</li>
+        <li><strong>ease-out:</strong> Starts fast and decelerates.</li>
+        <li><strong>ease-in-out:</strong> A combination of slow start and end with an acceleration in the middle.</li>
+    </ul>
+
+    <div class="section-title">4. Delay</div>
+    <p>The <code>delay</code> is the time to wait before the transition begins. It allows animations to start after a certain time. For example, a delay of <code>1s</code> starts the transition one second after the trigger.</p>
+
+    <!-- Summary of Transitions -->
+    <h2>Summary of CSS Transition Properties</h2>
+    <ul>
+        <li><strong>Transition Property:</strong> Defines which CSS property is animated.</li>
+        <li><strong>Duration:</strong> Controls how long the transition effect takes to complete.</li>
+        <li><strong>Timing Function:</strong> Specifies the speed curve of the transition (e.g., linear, ease, ease-in-out).</li>
+        <li><strong>Delay:</strong> Sets the time to wait before the transition starts.</li>
+    </ul>
+
+</body>
+</html>

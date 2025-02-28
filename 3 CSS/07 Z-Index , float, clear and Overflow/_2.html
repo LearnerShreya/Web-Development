@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Concepts: Z-Index, Overflow, Flow & Clear, and Text Properties</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #003366;
+        }
+        h2 {
+            border-left: 4px solid #003366;
+            padding-left: 8px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #004d80;
+            margin-top: 20px;
+        }
+        p {
+            line-height: 1.8;
+        }
+        code, pre {
+            background-color: #f9f9f9;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .example-box {
+            margin-top: 15px;
+            background-color: #e6f7ff;
+            border: 1px solid #99ccff;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .key-point, .note {
+            background-color: #dff0d8;
+            border-left: 4px solid #3c763d;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        .note {
+            background-color: #fcf8e3;
+            border-left: 4px solid #f0ad4e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Concepts</h1>
+
+        <h2>1. Z-Index</h2>
+        <p><strong>Description:</strong> The <code>z-index</code> property controls the stacking order of elements along the z-axis (depth). Higher <code>z-index</code> values bring elements closer to the viewer, while lower values move them farther back. Only works with positioned elements (with <code>position</code> set to <code>absolute</code>, <code>relative</code>, or <code>fixed</code>).</p>
+        <div class="example-box">
+            <p><strong>Example:</strong></p>
+            <pre><code> 
+.box1 {
+    position: absolute;
+    z-index: 1;
+    background-color: lightblue;
+}
+
+.box2 {
+    position: absolute;
+    z-index: 2;
+    background-color: lightcoral;
+}
+            </code></pre>
+        </div>
+        <div class="key-point"><strong>Key Point:</strong> Use <code>z-index</code> for managing which elements overlap others.</div>
+        <div class="note"><strong>Important Note:</strong> Z-index applies only to positioned elements.</div>
+
+        <h2>2. Overflow</h2>
+        <p><strong>Description:</strong> The <code>overflow</code> property manages content that extends beyond the bounds of an element's container. Its values are:</p>
+        <ul>
+            <li><strong>hidden:</strong> Clips content that overflows, hiding it.</li>
+            <li><strong>visible:</strong> Allows content to spill out beyond the container.</li>
+            <li><strong>scroll:</strong> Adds scrollbars to see hidden content.</li>
+            <li><strong>auto:</strong> Adds scrollbars only when necessary.</li>
+        </ul>
+        <div class="example-box">
+            <p><strong>Example:</strong></p>
+            <pre><code> 
+.container {
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+    background-color: lightgreen;
+}
+            </code></pre>
+        </div>
+        <div class="key-point"><strong>Key Point:</strong> Use <code>overflow</code> to manage how content behaves when it exceeds container size.</div>
+
+        <h2>3. Float and Clear</h2>
+        <p><strong>Description:</strong> <code>float</code> is used to push an element to the left or right of its container, often wrapping other content around it. The <code>clear</code> property is used to control elements' behavior after floating ones.</p>
+        <ul>
+            <li><strong>left:</strong> Floats the element to the left.</li>
+            <li><strong>right:</strong> Floats the element to the right.</li>
+            <li><strong>clear:</strong> Stops floating on specified side (<code>left</code>, <code>right</code>, or <code>both</code>).</li>
+        </ul>
+        <div class="example-box">
+            <p><strong>Example:</strong></p>
+            <pre><code> 
+.left-float {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+}
+
+.clearfix {
+    clear: both;
+}
+            </code></pre>
+        </div>
+        <div class="key-point"><strong>Key Point:</strong> <code>float</code> and <code>clear</code> are useful for layout adjustments.</div>
+
+        <h2>4. CSS on Text</h2>
+
+        <h3>4.1 Text Align</h3>
+        <p><strong>Description:</strong> <code>text-align</code> aligns text within an element. Options:</p>
+        <ul>
+            <li><strong>center:</strong> Centers the text.</li>
+            <li><strong>left:</strong> Aligns text to the left.</li>
+            <li><strong>right:</strong> Aligns text to the right.</li>
+            <li><strong>justify:</strong> Stretches text to fill the width.</li>
+        </ul>
+        <div class="example-box">
+            <p><strong>Example:</strong></p>
+            <pre><code> 
+.text-center {
+    text-align: center;
+}
+            </code></pre>
+        </div>
+
+        <h3>4.2 Text-Align-Last</h3>
+        <p><strong>Description:</strong> The <code>text-align-last</code> property aligns the last line in a paragraph or block element.</p>
+        <div class="example-box">
+            <p><strong>Example:</strong></p>
+            <pre><code> 
+.text-align-last-justify {
+    text-align-last: justify;
+}
+            </code></pre>
+        </div>
+
+        <h3>4.3 Direction and Unicode Bidi</h3>
+        <p><strong>Description:</strong> The <code>direction</code> property defines text direction. <code>unicode-bidi</code> is used for handling bidirectional text (e.g., right-to-left languages).</p>
+        <div class="example-box">
+            <p><strong>Example:</strong></p>
+            <pre><code> 
+.rtl {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+            </code></pre>
+        </div>
+        <div class="key-point"><strong>Key Point:</strong> <code>direction</code> and <code>unicode-bidi</code> are essential for multilingual text support.</div>
+    </div>
+</body>
+</html>
