@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Objects - Detailed Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    p {
+      margin: 10px 0;
+    }
+    pre {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      padding: 10px;
+      overflow-x: auto;
+    }
+    code {
+      color: #d14;
+    }
+    ul {
+      margin: 10px 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Objects - Comprehensive Notes</h1>
+
+  <h2>1. Creating Objects</h2>
+
+  <h3>1.1 Object Literal Syntax</h3>
+  <p>The object literal is the simplest and most common way to create an object. It's useful for defining a single object with known properties.</p>
+  <pre>
+    <code>
+const car = {
+  brand: "Toyota",
+  model: "Corolla",
+  year: 2020
+};
+console.log(car);
+    </code>
+  </pre>
+  <p><strong>Output:</strong></p>
+  <pre>
+    <code>
+{ brand: 'Toyota', model: 'Corolla', year: 2020 }
+    </code>
+  </pre>
+
+  <h3>1.2 Using the <code>new Object()</code> Syntax</h3>
+  <p>This syntax creates an object using the built-in <code>Object</code> constructor. Properties are added to the object one by one.</p>
+  <pre>
+    <code>
+const car = new Object();
+car.brand = "Toyota";
+car.model = "Corolla";
+car.year = 2020;
+console.log(car);
+    </code>
+  </pre>
+  <p><strong>Output:</strong></p>
+  <pre>
+    <code>
+{ brand: 'Toyota', model: 'Corolla', year: 2020 }
+    </code>
+  </pre>
+
+  <h3>1.3 Using Class Syntax</h3>
+  <p>The <code>class</code> syntax is a more structured and scalable way to create objects, especially for multiple instances of the same type.</p>
+  <pre>
+    <code>
+class Car {
+  constructor(brand, model, year) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+  }
+}
+const myCar = new Car("Ford", "Mustang", 2021);
+console.log(myCar);
+    </code>
+  </pre>
+  <p><strong>Output:</strong></p>
+  <pre>
+    <code>
+Car { brand: 'Ford', model: 'Mustang', year: 2021 }
+    </code>
+  </pre>
+
+  <h2>2. Accessing Object Properties</h2>
+
+  <h3>2.1 Dot Notation</h3>
+  <p>Dot notation is the most straightforward way to access object properties.</p>
+  <pre>
+    <code>
+console.log(car.brand); // Outputs: Toyota
+    </code>
+  </pre>
+
+  <h3>2.2 Square Bracket Notation</h3>
+  <p>Square brackets allow access to properties using strings or variables.</p>
+  <pre>
+    <code>
+console.log(car["model"]); // Outputs: Corolla
+    </code>
+  </pre>
+
+  <h3>2.3 Special Cases</h3>
+  <p>Properties with special characters, numbers, or reserved words require square brackets.</p>
+  <pre>
+    <code>
+const obj = { 123: "number", null: "null", undefined: "undefined" };
+console.log(obj[123]); // Outputs: number
+console.log(obj["null"]); // Outputs: null
+    </code>
+  </pre>
+
+  <h3>2.4 Computed Property Names</h3>
+  <p>Dynamic property names can be computed using square brackets.</p>
+  <pre>
+    <code>
+const key = "name";
+const person = { [key]: "Shreya" };
+console.log(person.name); // Outputs: Shreya
+    </code>
+  </pre>
+
+  <h2>3. Common Methods for Objects</h2>
+
+  <h3>3.1 <code>Object.keys()</code></h3>
+  <p>Returns an array of an object's property names.</p>
+  <pre>
+    <code>
+console.log(Object.keys(car)); // Outputs: [ 'brand', 'model', 'year' ]
+    </code>
+  </pre>
+
+  <h3>3.2 <code>Object.values()</code></h3>
+  <p>Returns an array of an object's property values.</p>
+  <pre>
+    <code>
+console.log(Object.values(car)); // Outputs: [ 'Toyota', 'Corolla', 2020 ]
+    </code>
+  </pre>
+
+  <h3>3.3 <code>Object.entries()</code></h3>
+  <p>Returns an array of key-value pairs from an object.</p>
+  <pre>
+    <code>
+console.log(Object.entries(car));
+// Outputs: [ ['brand', 'Toyota'], ['model', 'Corolla'], ['year', 2020] ]
+    </code>
+  </pre>
+
+  <h3>3.4 <code>Object.assign()</code></h3>
+  <p>Merges one or more source objects into a target object.</p>
+  <pre>
+    <code>
+const target = { a: 1 };
+const source = { b: 2 };
+Object.assign(target, source);
+console.log(target); // Outputs: { a: 1, b: 2 }
+    </code>
+  </pre>
+
+  <h3>3.5 <code>Object.freeze()</code></h3>
+  <p>Prevents modifications to an object.</p>
+  <pre>
+    <code>
+Object.freeze(car);
+car.year = 2021; // No effect
+console.log(car.year); // Outputs: 2020
+    </code>
+  </pre>
+
+  <h3>3.6 <code>Object.seal()</code></h3>
+  <p>Allows modification of existing properties but prevents adding or removing properties.</p>
+  <pre>
+    <code>
+Object.seal(car);
+car.brand = "Honda"; // Allowed
+car.color = "red"; // Not allowed
+console.log(car);
+    </code>
+  </pre>
+
+  <h2>4. Nested Objects</h2>
+  <p>Objects can have other objects as their values.</p>
+  <pre>
+    <code>
+const car = {
+  brand: "Toyota",
+  details: {
+    model: "Corolla",
+    year: 2020
+  }
+};
+console.log(car.details.model); // Outputs: Corolla
+    </code>
+  </pre>
+
+  <h2>5. Destructuring</h2>
+  <p>Destructuring simplifies extracting properties into variables.</p>
+  <pre>
+    <code>
+const { brand, details: { model } } = car;
+console.log(brand, model); // Outputs: Toyota Corolla
+    </code>
+  </pre>
+
+  <h2>6. Spread Operator</h2>
+  <p>The spread operator is useful for copying or merging objects.</p>
+  <pre>
+    <code>
+const carCopy = { ...car };
+console.log(carCopy);
+    </code>
+  </pre>
+</body>
+</html>

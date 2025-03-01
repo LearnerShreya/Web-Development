@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest vs Spread Operator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 5px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Difference Between Rest and Spread Operator</h1>
+
+    <p>The <code>...</code> operator in JavaScript can act as either the <strong>rest</strong> or <strong>spread</strong> operator, depending on the context.</p>
+
+    <h2>1. Rest Operator (<code>...</code>)</h2>
+    <p><strong>Purpose:</strong> Collects multiple elements or properties into a single entity (e.g., an array or object).</p>
+    <p><strong>Use Cases:</strong> Used in array/object destructuring or function arguments to group remaining items.</p>
+
+    <h3>Examples:</h3>
+<pre><code>// In Array Destructuring
+const arr = [1, 2, 3, 4];
+const [first, ...rest] = arr; 
+// 'first' = 1, 'rest' = [2, 3, 4]</code></pre>
+        
+<pre><code>// In Function Parameters
+function sum(...numbers) {
+    return numbers.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3)); // Output: 6</code></pre>
+
+<pre><code>// In Object Destructuring
+const obj = { a: 1, b: 2, c: 3 };
+const { a, ...rest } = obj;
+// 'a' = 1, 'rest' = { b: 2, c: 3 }</code></pre>
+
+<h2>2. Spread Operator (<code>...</code>)</h2>
+<p><strong>Purpose:</strong> Expands elements or properties from an array or object into individual items.</p>
+<p><strong>Use Cases:</strong> Used in function calls, array/object literals to distribute the items/properties.</p>
+
+<h3>Examples:</h3>
+<pre><code>// In Arrays
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const combined = [...arr1, ...arr2];
+// 'combined' = [1, 2, 3, 4]</code></pre>
+
+<pre><code>// In Objects
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+const combined = { ...obj1, ...obj2 };
+// 'combined' = { a: 1, b: 2, c: 3, d: 4 }</code></pre>
+
+<pre><code>// In Function Calls
+const numbers = [1, 2, 3];
+console.log(Math.max(...numbers)); // Output: 3</code></pre>
+
+    <h2>Key Differences</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Aspect</th>
+                <th>Rest Operator</th>
+                <th>Spread Operator</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Purpose</strong></td>
+                <td>Combines multiple elements into one (e.g., collect remaining array items).</td>
+                <td>Expands one entity into multiple elements (e.g., split an array into arguments).</td>
+            </tr>
+            <tr>
+                <td><strong>Context</strong></td>
+                <td>Used in destructuring or function arguments.</td>
+                <td>Used in literals or function calls.</td>
+            </tr>
+            <tr>
+                <td><strong>Output</strong></td>
+                <td>Creates an array or object from remaining items.</td>
+                <td>Distributes elements or properties as individual items.</td>
+            </tr>
+        </tbody>
+    </table>
+
+<p><strong>Quick Summary:</strong> Rest combines, Spread expands!
+<ol>
+    <li><strong>Rest (<code>...</code>)</strong>: Combines multiple elements into one (e.g., collect remaining array items).</li>
+    <li><strong>Spread (<code>...</code>)</strong>: Expands one entity into multiple elements (e.g., split an array into arguments).</li>
+</ol>
+</p>
+
+</body>
+</html>

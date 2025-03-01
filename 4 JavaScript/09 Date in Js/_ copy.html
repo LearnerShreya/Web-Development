@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Date and Time Notes</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f5;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 1.8em;
+            color: #2575fc;
+            margin-bottom: 10px;
+            border-left: 5px solid #6a11cb;
+            padding-left: 10px;
+        }
+
+        p, ul {
+            margin: 10px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        code {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 2px 6px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #6a11cb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #2575fc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #6a11cb;
+            color: white;
+            font-size: 0.9em;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #2575fc;
+            color: white;
+        }
+
+        /* Interactive Styles */
+        .interactive {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+
+        .interactive p {
+            margin: 10px 0;
+        }
+
+        .interactive-result {
+            font-weight: bold;
+            color: #2575fc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Date and Time Notes</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The JavaScript <code>Date</code> object is a powerful tool for working with dates and times. It offers methods for creating, retrieving, and manipulating date and time values.</p>
+        </section>
+
+        <section>
+            <h2>Creating Date Objects</h2>
+            <p>Here are some ways to create date objects:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Example</th>
+                        <th>Output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Current Date and Time</td>
+                        <td><code>new Date()</code></td>
+                        <td>Current date and time</td>
+                    </tr>
+                    <tr>
+                        <td>Specific Date</td>
+                        <td><code>new Date("2024-12-01")</code></td>
+                        <td>1st December 2024</td>
+                    </tr>
+                    <tr>
+                        <td>Year, Month, Day</td>
+                        <td><code>new Date(2024, 11, 1)</code></td>
+                        <td>1st December 2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Working with Date Components</h2>
+            <p>Retrieve specific parts of a date:</p>
+            <ul>
+                <li><code>getFullYear()</code>: Returns the year.</li>
+                <li><code>getMonth()</code>: Returns the month (0-based).</li>
+                <li><code>getDate()</code>: Returns the day of the month.</li>
+            </ul>
+            <div class="interactive">
+                <p>Click the button to see the current year:</p>
+                <button onclick="showYear()">Get Year</button>
+                <p class="interactive-result" id="yearResult"></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Formatting Dates</h2>
+            <p>JavaScript provides methods to format dates:</p>
+            <ul>
+                <li><code>toDateString()</code>: Returns a readable date string.</li>
+                <li><code>toISOString()</code>: Returns the date in ISO format.</li>
+            </ul>
+            <pre><code>
+let today = new Date();
+console.log(today.toDateString());  // "Sun Dec 1 2024"
+console.log(today.toISOString());  // "2024-12-01T00:00:00.000Z"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Manipulating Dates</h2>
+            <p>Use setter methods to change date components:</p>
+            <ul>
+                <li><code>setFullYear()</code>: Changes the year.</li>
+                <li><code>setMonth()</code>: Changes the month.</li>
+                <li><code>setDate()</code>: Changes the day.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 JavaScript Notes | Designed by Shreya Singh
+    </footer>
+
+    <script>
+        function showYear() {
+            const now = new Date();
+            document.getElementById("yearResult").textContent = `The current year is: ${now.getFullYear()}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Primitive Data Types in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        h3 {
+            color: #555;
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 5px solid #4CAF50;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            color: #d63384;
+        }
+        ul {
+            margin: 10px 0;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .example {
+            margin-bottom: 20px;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <h2>Primitive Data Types in JavaScript</h2>
+    <p>Primitive data types are the most basic data types in JavaScript. They represent single immutable values and are directly assigned to a variable.</p>
+
+    <h3>Key Features:</h3>
+    <ul>
+        <li><strong>Simple structure:</strong> Represent a single value (e.g., a number, string, or boolean).</li>
+        <li><strong>Immutable:</strong> Their values cannot be altered after creation.</li>
+        <li><strong>Stored by value:</strong> The variable directly holds the data.</li>
+    </ul>
+
+    <h3>Examples:</h3>
+    <ol>
+        <li><strong>Number:</strong> Represents numeric values (e.g., <code>42</code>, <code>3.14</code>).</li>
+        <li><strong>String:</strong> Represents a sequence of characters (e.g., <code>"Hello"</code>, <code>'World'</code>).</li>
+        <li><strong>Boolean:</strong> Represents true or false values.</li>
+        <li><strong>Undefined:</strong> A variable that has been declared but not assigned a value.</li>
+        <li><strong>Null:</strong> Represents the absence of any value.</li>
+        <li><strong>Symbol:</strong> A unique and immutable value used as object keys.</li>
+        <li><strong>BigInt:</strong> Represents integers larger than <code>Number.MAX_SAFE_INTEGER</code>.</li>
+    </ol>
+
+    <hr>
+
+    <h2>Non-Primitive Data Types in JavaScript</h2>
+    <p>Non-primitive data types, also known as reference types, are objects that can store collections of values or more complex entities.</p>
+
+    <h3>Key Features:</h3>
+    <ul>
+        <li><strong>Complex structure:</strong> Can store multiple values or represent collections.</li>
+        <li><strong>Mutable:</strong> Their properties or contents can be changed.</li>
+        <li><strong>Stored by reference:</strong> The variable holds a reference to the memory location.</li>
+    </ul>
+
+    <h3>Examples:</h3>
+    <ol>
+        <li><strong>Object:</strong> A collection of key-value pairs (e.g., <code>{name: "John", age: 30}</code>).</li>
+        <li><strong>Array:</strong> An ordered list of values (e.g., <code>[1, 2, 3]</code>).</li>
+        <li><strong>Function:</strong> A reusable block of code.</li>
+        <li><strong>Class:</strong> A blueprint for creating objects.</li>
+        <li><strong>Date:</strong> Represents dates and times.</li>
+    </ol>
+
+    <hr>
+
+    <h2>Comparison Table:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Primitive Data Types</th>
+                <th>Non-Primitive Data Types</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Definition</strong></td>
+                <td>Basic built-in data types.</td>
+                <td>Complex data types derived from primitives.</td>
+            </tr>
+            <tr>
+                <td><strong>Structure</strong></td>
+                <td>Represent single values.</td>
+                <td>Store collections or complex entities.</td>
+            </tr>
+            <tr>
+                <td><strong>Examples</strong></td>
+                <td><code>Number</code>, <code>String</code>, <code>Boolean</code></td>
+                <td><code>Object</code>, <code>Array</code>, <code>Function</code></td>
+            </tr>
+            <tr>
+                <td><strong>Mutability</strong></td>
+                <td>Immutable</td>
+                <td>Mutable</td>
+            </tr>
+            <tr>
+                <td><strong>Storage</strong></td>
+                <td>Stored by value</td>
+                <td>Stored by reference</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+    <h1>Non-Primitive Data Types in JavaScript</h1>
+    <p>JavaScript provides several non-primitive data types that allow developers to store and manipulate complex data structures. These data types include <strong>Arrays</strong>, <strong>Objects</strong>, and <strong>Functions</strong>. Let’s explore each in detail.</p>
+    
+    <div class="section">
+        <h2>1. Array</h2>
+        <p><strong>Definition:</strong> An <code>Array</code> is a collection of elements that are stored in a single variable and are accessed using an index. <code>Arrays can hold values of any data type</code>, such as strings, numbers, objects, or even other arrays.</p>
+        <p><b>Example:</b> let arr = [10, 20, 50, "Rohit", "Mohit"];</p>
+        <h3>Key Features:</h3>
+        <ul>
+            <li>Arrays are <strong>indexed</strong>, starting from <code>0</code>.</li>
+            <li>They can store <strong>heterogeneous</strong> data types (e.g., numbers, strings, objects).</li>
+            <li>Support dynamic resizing, i.e., you can add or remove elements.</li>
+            <li>Provide various built-in methods like <code>push()</code>, <code>pop()</code>, <code>map()</code>, and <code>filter()</code>.</li>
+        </ul>
+        <h3>Common Array Methods:</h3>
+        <ul>
+            <li><code>push()</code>: Adds an element to the end of the array.</li>
+            <li><code>pop()</code>: Removes the last element.</li>
+            <li><code>shift()</code>: Removes the first element.</li>
+            <li><code>unshift()</code>: Adds an element to the beginning.</li>
+            <li><code>map()</code>: Creates a new array by applying a function to each element.</li>
+        </ul>
+        <h3>Example:</h3>
+        <pre class="example">
+const fruits = ['Apple', 'Banana', 'Cherry'];
+console.log(fruits[1]); // Output: Banana
+
+fruits.push('Orange'); // Adds Orange to the array
+console.log(fruits); // Output: ['Apple', 'Banana', 'Cherry', 'Orange']
+
+fruits.pop(); // Removes the last element
+console.log(fruits); // Output: ['Apple', 'Banana', 'Cherry']
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>2. Object</h2>
+        <p><strong>Definition:</strong> An <code>Object</code> is a data structure that represents a collection of properties. Each property is defined as a <code>key-value</code> pair. Objects are widely used to model real-world entities and store structured data.</p>
+        <h3>Key Features:</h3>
+        <ul>
+            <li>Properties are defined using <code>key: value</code> pairs.</li>
+            <li>Keys are typically strings or symbols, while values can be of any data type.</li>
+            <li>Objects are mutable, meaning their properties can be added, modified, or deleted.</li>
+            <li>They can have methods, i.e., functions as values.</li>
+        </ul>
+        <h3>Creating Objects:</h3>
+        <ul>
+            <li><strong>Using Object Literals:</strong> <code>const obj = { key: value };</code></li>
+            <li><strong>Using Constructor:</strong> <code>const obj = new Object();</code></li>
+        </ul>
+        <h3>Example:</h3>
+        <pre class="example">
+const car = {
+    brand: 'Tesla',
+    model: 'Model S',
+    year: 2023,
+    drive: function() {
+        console.log('The car is driving');
+    }
+};
+
+console.log(car.brand); // Output: Tesla
+car.drive(); // Output: The car is driving
+
+car.color = 'Red'; // Adding a new property
+console.log(car); // Output: { brand: 'Tesla', model: 'Model S', year: 2023, drive: [Function: drive], color: 'Red' }
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>3. Function</h2>
+        <p><strong>Definition:</strong> A <code>Function</code> is a reusable block of code designed to perform a specific task. Functions are used to organize code, reduce redundancy, and improve reusability.</p>
+        <h3>Key Features:</h3>
+        <ul>
+            <li>Functions can take <strong>parameters</strong> and optionally return a value.</li>
+            <li>They can be <strong>named</strong> or <strong>anonymous</strong>.</li>
+            <li>Arrow functions (<code>=></code>) provide a concise syntax.</li>
+            <li>Functions can be passed as arguments to other functions (higher-order functions).</li>
+        </ul>
+        <h3>Types of Functions:</h3>
+        <ul>
+            <li><strong>Named Function:</strong> Declared with a name and invoked using that name.</li>
+            <li><strong>Anonymous Function:</strong> Does not have a name and is often assigned to a variable.</li>
+            <li><strong>Arrow Function:</strong> A shorthand syntax for functions using <code>=></code>.</li>
+        </ul>
+        <h3>Example:</h3>
+        <pre class="example">
+// Named Function
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+console.log(greet('Shreya')); // Output: Hello, Shreya!
+
+// Anonymous Function
+const add = function(a, b) {
+    return a + b;
+};
+console.log(add(5, 3)); // Output: 8
+
+// Arrow Function
+const multiply = (x, y) => x * y;
+console.log(multiply(4, 2)); // Output: 8
+        </pre>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>Non-primitive data types in JavaScript such as <strong>Arrays</strong>, <strong>Objects</strong>, and <strong>Functions</strong> provide the flexibility to handle complex data and functionalities. Mastering these concepts is crucial for effective JavaScript programming.</p>
+</body>
+</html>

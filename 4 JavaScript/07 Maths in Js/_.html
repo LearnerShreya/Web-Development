@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Notes: Numbers and Math</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+            color: #e74c3c;
+        }
+        ul {
+            margin: 10px 0;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .example {
+            background-color: #eef;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Notes: Numbers and Math</h1>
+
+    <div class="section">
+        <h2>1. Numbers in JavaScript</h2>
+        <p>In JavaScript, numbers can be of two types:</p>
+        <ul>
+            <li><strong>Primitive Number:</strong> A simple numeric value.</li>
+            <li><strong>Number Object:</strong> A complex object created using the <code>Number</code> constructor.</li>
+        </ul>
+        <p>Examples:</p>
+        <pre><code>
+let num1 = 231; // Primitive Number
+let num2 = new Number(231); // Number Object
+        </code></pre>
+        <p><strong>Key differences:</strong></p>
+        <ul>
+            <li><code>num1 === num2</code> returns <code>false</code> because a primitive is not strictly equal to an object.</li>
+            <li>Use <code>num1 == num2</code> for value comparison, which ignores the type difference.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>2. Useful Number Methods</h2>
+        <ul>
+            <li><strong>toFixed(n):</strong> Rounds a number to <code>n</code> decimal places.</li>
+            <div class="example">
+                <p><strong>Example:</strong></p>
+                <pre><code>
+let num = 231.6789;
+console.log(num.toFixed(2)); // Output: 231.68
+                </code></pre>
+            </div>
+            <li><strong>toPrecision(n):</strong> Formats the number to <code>n</code> significant digits.</li>
+            <div class="example">
+                <p><strong>Example:</strong></p>
+                <pre><code>
+console.log(num.toPrecision(3)); // Output: 232
+                </code></pre>
+            </div>
+            <li><strong>toExponential(n):</strong> Converts the number to exponential notation.</li>
+            <div class="example">
+                <p><strong>Example:</strong></p>
+                <pre><code>
+console.log(num.toExponential(2)); // Output: 2.32e+2
+                </code></pre>
+            </div>
+            <li><strong>toString():</strong> Converts the number to a string.</li>
+            <div class="example">
+                <p><strong>Example:</strong></p>
+                <pre><code>
+console.log(num.toString()); // Output: "231.6789"
+console.log(typeof num.toString()); // Output: "string"
+                </code></pre>
+            </div>
+            <li><strong>valueOf():</strong> Returns the primitive value of a <code>Number</code> object.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Math Object</h2>
+        <h3>3.1 Mathematical Constants</h3>
+        <ul>
+            <li><code>Math.E</code>: Euler's number (~2.718).</li>
+            <li><code>Math.PI</code>: Pi (~3.14159).</li>
+            <li><code>Math.LN10</code>: Natural logarithm of 10 (~2.302).</li>
+            <li><code>Math.LOG10E</code>: Logarithm base 10 of Euler's number (~0.434).</li>
+        </ul>
+        <h3>3.2 Common Math Methods</h3>
+        <ul>
+            <li><code>Math.floor(x)</code>: Rounds <code>x</code> down to the nearest integer.</li>
+            <li><code>Math.ceil(x)</code>: Rounds <code>x</code> up to the nearest integer.</li>
+            <li><code>Math.random()</code>: Generates a random number between 0 (inclusive) and 1 (exclusive).</li>
+        </ul>
+        <h3>Examples:</h3>
+        <div class="example">
+            <p><strong>Floor and Ceil:</strong></p>
+            <pre><code>
+let num = 29.7;
+console.log(Math.floor(num)); // Output: 29
+console.log(Math.ceil(num));  // Output: 30
+            </code></pre>
+        </div>
+        <div class="example">
+            <p><strong>Generate Random Numbers:</strong></p>
+            <pre><code>
+// Generate a random number between 1 and 10
+console.log(Math.floor(Math.random() * 10) + 1);
+
+// Generate a random number between 40 and 50
+console.log(Math.floor(Math.random() * (50 - 40 + 1)) + 40);
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Practical Applications</h2>
+        <p>Using random numbers in games like a dice roll:</p>
+        <div class="example">
+            <pre><code>
+// Simulating a dice roll (1 to 6)
+console.log(Math.floor(Math.random() * 6) + 1);
+            </code></pre>
+        </div>
+    </div>
+</body>
+</html>
